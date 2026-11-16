@@ -1,35 +1,24 @@
-OSOBNÍ TERMINÁL VZ. 37 — VÝVOJOVÁ VERZE 0.5
+OSOBNÍ TERMINÁL VZ. 37 — VERZE 0.6
+===================================
 
-OPRAVA ZOBRAZENÍ POZADÍ HRADČAN
-
-Původní pozadí verze 0.4 bylo velmi nízko a zakrývaly ho neprůhledné panely.
-V této verzi je panorama výše, panely na úvodní stránce jsou průhlednější.
-Navíc je zmenšená kopie obrázku zabudovaná přímo v souboru style.css,
-takže se zobrazí i v případě, že pozadi-hradcany.webp nenahrajete.
+NOVINKA: Hradčany bez vlastního grafického rámu.
+Veškeré rámečky tlačítek, panelů a okrajů terminálu vznikají výhradně v CSS.
 
 INSTALACE NA GITHUB PAGES
-1. Nahrajte do stejného veřejného repozitáře VŠECHNY soubory z balíčku
-   včetně index.html, app.js, style.css, sw.js, manifest.webmanifest
-   a složky icons. Volitelný soubor pozadi-hradcany.webp slouží jako
-   samostatně vyměnitelné pozadí.
-2. Vyčkejte na dokončení nasazení GitHub Pages.
-3. Zavřete nainstalovanou aplikaci a spusťte ji znovu.
-4. Pokud vidíte stále starý vzhled, otevřete adresu aplikace v Chromu
-   a obnovte ji s připojením k internetu. Neodstraňujte úložiště webu,
-   pokud chcete zachovat záznamy polního deníku.
+1. Rozbalte ZIP.
+2. Nahrajte VŠECHNY soubory a složku icons do kořene stávajícího repozitáře.
+3. Především nahrajte i nový soubor pozadi-hradcany.webp.
+4. Nechte zveřejnit aktualizaci na GitHub Pages, pak aplikaci zavřete a otevřete.
+5. Na spodní liště ověřte nápis VERZE 0.6.
 
-KONTROLA SAMOSTATNÉHO SOUBORU
-K adrese aplikace přidejte pozadi-hradcany.webp, např.:
-https://UZIVATEL.github.io/REPOZITAR/pozadi-hradcany.webp
-Jestli jej GitHub zobrazí, byl soubor nahrán.
-I bez něj použije aplikace záložní obrázek v CSS.
+ÚPRAVA POZADÍ
+Pozadí je v souboru pozadi-hradcany.webp, samotné vykreslení
+nastavuje poslední blok souboru style.css.
 
-EDITACE TECHNICKÝCH ÚDAJŮ
-Upravujte objekt TECH_SPECS na začátku souboru app.js.
+ZACHOVÁNÍ DAT
+Používá se stejný klíč lokálního deníku jako ve verzích 0.1–0.5.
+Při aktualizaci nemažte úložiště webu ani data nainstalované aplikace.
 
-UKLÁDÁNÍ ZÁZNAMŮ
-Klíč localStorage pt37-notes-v1 se nemění. Zachovejte stejnou webovou
-adresu a nečistěte data stránky.
-
-POZNÁMKA
-Režim fullscreen či uzamčení orientace závisí na Androidu/Chromu.
+FUNKCE
+Hodiny, kalendář, GPS souřadnice, externí mapa, deník,
+encyklopedie, nastavení a editovatelné technické údaje výrobce Praga.
