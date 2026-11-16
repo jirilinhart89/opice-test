@@ -1,7 +1,7 @@
 {
-  "name": "Osobní terminál P.T. 37",
-  "short_name": "P.T. 37",
-  "description": "Jantarový retrofuturistický terminál – osobní cestovní encyklopedie a polní deník.",
+  "name": "Osobní terminál vz. 37",
+  "short_name": "VZ. 37",
+  "description": "Jantarový retrofuturistický terminál – osobní přenosná informační jednotka s deníkem a encyklopedií.",
   "id": "./",
   "start_url": "./index.html",
   "scope": "./",

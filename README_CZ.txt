@@ -46,3 +46,17 @@ AKTUALIZACE NA GITHUB PAGES
 - Offline cache má nové označení; po nasazení aplikaci zavřete a znovu
   otevřete. Pokud se objeví stará verze, aplikaci znovu načtěte.
 - Není nutné přeinstalovat aplikaci ani mazat její data.
+
+
+NOVINKY VERZE 0.4
+------------------
+- Na všech obrazovkách je nyní použito pozadí s panoramatem Hradčan.
+- Pozadí: pozadi-hradcany.png (soubor nahraný uživatelem).
+- Čitelnost podporuje jemné tmavé tónování a poloprůhledné panely.
+- V CSS souboru style.css, na konci v sekci VZ. 37 / VERZE 0.4,
+  lze změnit překrytí, velikost i polohu pozadí.
+- Přidání obrázku do offline cache v sw.js.
+- Zachovány ostatní funkce, nastavení, technické údaje i stejná
+  klíčová položka úložiště deníku. Nahraj obsah ZIP do kořene
+  stejného repozitáře GitHub Pages (včetně obrázku).
+- Při aktualizaci může být nutné aplikaci uzavřít a znovu spustit.

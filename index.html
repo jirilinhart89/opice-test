@@ -4,19 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#0c0906" />
-  <meta name="application-name" content="Osobní terminál" />
-  <meta name="description" content="Retrofuturistický osobní terminál – prototyp PWA pro nošení na předloktí." />
+  <meta name="application-name" content="Osobní terminál vz. 37" />
+  <meta name="description" content="Retrofuturistický osobní terminál vz. 37 – prototyp PWA pro nošení na předloktí." />
   <meta name="mobile-web-app-capable" content="yes" />
   <link rel="manifest" href="./manifest.webmanifest" />
   <link rel="icon" href="./icons/icon-192.png" sizes="192x192" />
   <link rel="stylesheet" href="./style.css" />
-  <title>Osobní terminál — P.T. 37</title>
+  <title>Osobní terminál vz. 37</title>
 </head>
 <body>
   <div id="rotateNotice" aria-live="polite"><div class="turn-icon">↻</div><strong>OTOČTE TERMINÁL NA ŠÍŘKU</strong><span>Rozhraní bylo navrženo pro displej podél předloktí.</span></div>
   <div class="terminal" id="terminal">
     <header class="topbar">
-      <button type="button" id="homeLogo" class="identity brand-home" aria-label="Zpět na hlavní nabídku" title="Hlavní nabídka"><span class="monogram" aria-hidden="true">T</span><span class="identity-text"><strong>OSOBNÍ TERMINÁL</strong><small>ČS. ELEKTROTECHNICKÉ ZÁVODY · P.T. 37</small></span></button>
+      <button type="button" id="homeLogo" class="identity brand-home" aria-label="Zpět na hlavní nabídku" title="Hlavní nabídka"><span class="monogram" aria-hidden="true">T</span><span class="identity-text"><strong>OSOBNÍ TERMINÁL</strong><small>PRAGA · OSOBNÍ TERMINÁL VZ. 37</small></span></button>
       <div class="top-state"><span id="connectivity" aria-live="polite">MÍSTNÍ REŽIM</span><span class="status-dot"></span></div>
     </header>
     <main>
@@ -58,10 +58,29 @@
       </section>
       <section id="settings" class="page" aria-labelledby="settingsTitle">
         <div class="section-title"><h1 id="settingsTitle">04 / NASTAVENÍ</h1><span>SYSTÉM TERMINÁLU</span></div>
-        <div class="two-col"><div class="panel"><h2>REŽIM ZOBRAZENÍ</h2><p>Preferovaná orientace: NA ŠÍŘKU. Režim celé obrazovky je nastaven při instalaci na plochu telefonu, pokud jej prohlížeč podporuje.</p><button class="solid" id="fullBtn">ZKUSIT CELOU OBRAZOVKU</button><p class="muted" id="fullStatus"></p></div><div class="panel"><h2>PAMĚŤ A ÚDAJE</h2><p>Deník je ukládán jen do lokální paměti tohoto prohlížeče. Odstraněním dat webu o něj můžete přijít.</p><button class="outline" id="exportBtn">EXPORTOVAT DENÍK (.TXT)</button><p class="muted">P.T. 37 · KONCEPČNÍ PROTOTYP 0.2</p></div></div>
+        <div class="two-col">
+          <div class="panel"><h2>REŽIM ZOBRAZENÍ</h2><p>Preferovaná orientace: NA ŠÍŘKU. Režim celé obrazovky je nastaven při instalaci na plochu telefonu, pokud jej prohlížeč podporuje.</p><button class="solid" id="fullBtn">ZKUSIT CELOU OBRAZOVKU</button><p class="muted" id="fullStatus"></p></div>
+          <div class="panel"><h2>PAMĚŤ A ÚDAJE</h2><p>Deník je ukládán jen do lokální paměti tohoto prohlížeče. Odstraněním dat webu o něj můžete přijít.</p><div class="settings-actions"><button class="outline" id="exportBtn">EXPORTOVAT DENÍK (.TXT)</button><button class="outline" data-go="specs">TECHNICKÉ ÚDAJE</button></div><p class="muted">OSOBNÍ TERMINÁL VZ. 37 · KONCEPČNÍ PROTOTYP 0.4</p></div>
+        </div>
+      </section>
+      <section id="specs" class="page" aria-labelledby="specsTitle">
+        <div class="section-title"><h1 id="specsTitle">05 / TECHNICKÉ ÚDAJE</h1><span>VÝROBNÍ ŠTÍTEK A SERVISNÍ LIST</span></div>
+        <div class="two-col specs-grid">
+          <div class="panel scroll-panel">
+            <h2 id="specDeviceName">OSOBNÍ TERMINÁL VZ. 37</h2>
+            <div class="spec-list" id="specList"></div>
+          </div>
+          <div class="panel scroll-panel">
+            <h2>POPIS URČENÍ</h2>
+            <p id="specDescription"></p>
+            <h2>STANDARDNÍ VÝBAVA</h2>
+            <ul class="spec-features" id="specFeatures"></ul>
+            <p class="muted" id="specServiceNote"></p>
+          </div>
+        </div>
       </section>
     </main>
-    <footer><div class="footer-label">P.T. 37 <span class="faint">/ VERZE 0.2</span></div><div class="footer-clock" id="footerClock">--:--</div></footer>
+    <footer><div class="footer-label">VZ. 37 <span class="faint">/ VERZE 0.4</span></div><div class="footer-clock" id="footerClock">--:--</div></footer>
   </div>
   <script src="./app.js" defer></script>
 </body>
