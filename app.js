@@ -1,7 +1,7 @@
 'use strict';
 const $ = (id) => document.getElementById(id);
 const STORAGE = 'pt37-notes-v1';
-const APP_VERSION = '0.4';
+const APP_VERSION = '0.5';
 let coords = null;
 
 /*

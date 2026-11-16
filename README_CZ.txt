@@ -1,62 +1,35 @@
-OSOBNÍ TERMINÁL P.T. 37 — prototyp 0.2
-======================================
-Tento balíček obsahuje webovou aplikaci ve stylu jantarového retro terminálu.
+OSOBNÍ TERMINÁL VZ. 37 — VÝVOJOVÁ VERZE 0.5
 
-FUNKCE
-- Hodiny a datum (skutečný čas telefonu)
-- Zápisník; záznamy se ukládají lokálně v prohlížeči
-- Export deníku do TXT
-- Malá cestovní encyklopedie fiktivního světa
-- GPS poloha na vyžádání (nutné povolit polohu)
-- Otevření online OpenStreetMap v prohlížeči
-- Offline načítání základního rozhraní po prvním návštěvě na HTTPS
+OPRAVA ZOBRAZENÍ POZADÍ HRADČAN
 
-JAK ZPROVOZNIT NA MOBILU
-1. Rozbalte ZIP a nahrajte celý obsah složky na hosting statických webů
-   s HTTPS (například Netlify Drop nebo GitHub Pages).
-2. Otevřete výslednou HTTPS adresu v Chrome na Androidu.
-3. Z nabídky Chromu zvolte Instalovat aplikaci / Přidat na plochu,
-   pokud prohlížeč tuto možnost nabízí.
-4. Spouštějte P.T. 37 z vytvořené ikony. Nastavený fullscreen
-   a landscape závisejí na podpoře telefonu/prohlížeče.
-5. Připojení je třeba pro prvotní načtení, později má základ běžet offline.
+Původní pozadí verze 0.4 bylo velmi nízko a zakrývaly ho neprůhledné panely.
+V této verzi je panorama výše, panely na úvodní stránce jsou průhlednější.
+Navíc je zmenšená kopie obrázku zabudovaná přímo v souboru style.css,
+takže se zobrazí i v případě, že pozadi-hradcany.webp nenahrajete.
 
-POZOR
-- Pouhé otevření index.html jako místního souboru může zobrazit náhled,
-  ale neumožní plnou instalaci PWA ani všechny funkce.
-- Kódy v balíčku nejsou zveřejněné ani nahrané na server.
-- Údaje deníku jsou v localStorage daného webového původu/prohlížeče;
-  odstranění dat aplikace je smaže. Používejte Exportovat deník.
-- Offline mapa není součástí prototypu; GPS může fungovat bez internetu,
-  otevření mapové služby připojení potřebuje.
-- Nápis P.T. 37 a značení TESLA jsou prozatímní grafickou stylizací.
+INSTALACE NA GITHUB PAGES
+1. Nahrajte do stejného veřejného repozitáře VŠECHNY soubory z balíčku
+   včetně index.html, app.js, style.css, sw.js, manifest.webmanifest
+   a složky icons. Volitelný soubor pozadi-hradcany.webp slouží jako
+   samostatně vyměnitelné pozadí.
+2. Vyčkejte na dokončení nasazení GitHub Pages.
+3. Zavřete nainstalovanou aplikaci a spusťte ji znovu.
+4. Pokud vidíte stále starý vzhled, otevřete adresu aplikace v Chromu
+   a obnovte ji s připojením k internetu. Neodstraňujte úložiště webu,
+   pokud chcete zachovat záznamy polního deníku.
 
-NOVINKY VERZE 0.2
-- Kliknutím na horní znak T (či název) návrat do hlavní nabídky.
-- V dolní liště již pouze označení verze a aktuální čas.
-- Datum bez roku; hodiny a informace posunuty výše.
-- Větší a tučnější text, větší ikonky, popisky a dotykové cíle.
-- Rezerva pro přední kameru vlevo uprostřed v režimu na šířku.
-- Poznámky z předchozí verze zůstávají uložené (stejná adresa a prohlížeč).
+KONTROLA SAMOSTATNÉHO SOUBORU
+K adrese aplikace přidejte pozadi-hradcany.webp, např.:
+https://UZIVATEL.github.io/REPOZITAR/pozadi-hradcany.webp
+Jestli jej GitHub zobrazí, byl soubor nahrán.
+I bez něj použije aplikace záložní obrázek v CSS.
 
-AKTUALIZACE NA GITHUB PAGES
-- Nahraďte všechny soubory novou verzí v kořeni stejného repozitáře;
-  zachovejte původní HTTPS adresu.
-- Soubory nahrajte rozbalené, nikoli jako ZIP.
-- Offline cache má nové označení; po nasazení aplikaci zavřete a znovu
-  otevřete. Pokud se objeví stará verze, aplikaci znovu načtěte.
-- Není nutné přeinstalovat aplikaci ani mazat její data.
+EDITACE TECHNICKÝCH ÚDAJŮ
+Upravujte objekt TECH_SPECS na začátku souboru app.js.
 
+UKLÁDÁNÍ ZÁZNAMŮ
+Klíč localStorage pt37-notes-v1 se nemění. Zachovejte stejnou webovou
+adresu a nečistěte data stránky.
 
-NOVINKY VERZE 0.4
-------------------
-- Na všech obrazovkách je nyní použito pozadí s panoramatem Hradčan.
-- Pozadí: pozadi-hradcany.png (soubor nahraný uživatelem).
-- Čitelnost podporuje jemné tmavé tónování a poloprůhledné panely.
-- V CSS souboru style.css, na konci v sekci VZ. 37 / VERZE 0.4,
-  lze změnit překrytí, velikost i polohu pozadí.
-- Přidání obrázku do offline cache v sw.js.
-- Zachovány ostatní funkce, nastavení, technické údaje i stejná
-  klíčová položka úložiště deníku. Nahraj obsah ZIP do kořene
-  stejného repozitáře GitHub Pages (včetně obrázku).
-- Při aktualizaci může být nutné aplikaci uzavřít a znovu spustit.
+POZNÁMKA
+Režim fullscreen či uzamčení orientace závisí na Androidu/Chromu.
