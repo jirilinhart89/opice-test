@@ -1,7 +1,7 @@
 'use strict';
 const $ = (id) => document.getElementById(id);
 const STORAGE = 'pt37-notes-v1';
-const APP_VERSION = '0.6';
+const APP_VERSION = '0.8';
 let coords = null;
 
 /*
@@ -18,11 +18,11 @@ const TECH_SPECS = {
     ['Vývojové centrum', 'Vývojové centrum užitné elektrotechniky a elektroniky'],
     ['Typové označení', 'OT vz. 37'],
     ['Rok výroby', '2037'],
-    ['Kategorie', 'Osobní počítač s integrovanou cestovní encyklopedií'],
+    ['Kategorie', 'Osobní přenosný informační terminál'],
     ['Určení', 'Civilní a služební použití'],
     ['Displej', 'Jantarový zobrazovací režim s vysokým kontrastem'],
     ['Ovládání', 'Dotyková plocha / kapacitní stylus'],
-    ['Napájení', 'Vestavěný akumulátor, nabíjení 5 V DC'],
+    ['Napájení', 'Vestavěný akumulátor, nabíjení 5 V ss'],
     ['Spojení', 'Místní bezdrátové sítě, navigační přijímač, lokální archiv'],
     ['Paměť', 'Lokální záznamová paměť uživatele'],
     ['Doporučené rozměry tělesa', 'max. 200 × 90 × 28 mm'],
@@ -47,7 +47,7 @@ const TECH_SPECS = {
 };
 
 const enc = [
- {title:'OSOBNÍ TERMINÁL VZ. 37',body:'Osobní počítač s integrovanou cestovní encyklopedií určený pro evidenci poznámek, orientaci v terénu a přístup k místním encyklopedickým údajům. V současném provedení slouží jako koncepční osobní zařízení nošené na předloktí.\n\nNěkteré oblasti užívají pro podobná zařízení i lidová pojmenování, ta však nejsou součástí výrobního označení.'},
+ {title:'OSOBNÍ TERMINÁL VZ. 37',body:'Osobní přenosný informační terminál určený pro evidenci poznámek, orientaci v terénu a přístup k místním encyklopedickým údajům. V současném provedení slouží jako koncepční osobní zařízení nošené na předloktí.\n\nNěkteré oblasti užívají pro podobná zařízení i lidová pojmenování, ta však nejsou součástí výrobního označení.'},
  {title:'REPUBLIKA',body:'Souhrnné označení někdejšího státního zřízení a společného území Čech, Moravy, Slezska a Slovenska. Historické záznamy o jeho jednotlivých obdobích jsou neúplné.\n\nNěkteré komunity užívají název „Republika“ i dnes.'},
  {title:'CIVILNÍ OBRANA',body:'Předkoncová organizace spojená s přípravou obyvatelstva na nebezpečí, ochranou civilistů a budováním krytů. Nálezy jejích plánů a označení jsou časté.\n\nUPOZORNĚNÍ: Archivní plány nemusí odpovídat stavu terénu.'},
  {title:'LEGIONÁŘI',body:'Pověsti vyprávějí o ozbrojených poutnících, kteří pro Republiku putovali přes vzdálené země. Dobové prameny i lidové písně jim připisují různé činy. Přesné časové zařazení je sporné.'},
