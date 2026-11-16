@@ -16,7 +16,7 @@
   <div id="rotateNotice" aria-live="polite"><div class="turn-icon">↻</div><strong>OTOČTE TERMINÁL NA ŠÍŘKU</strong><span>Rozhraní bylo navrženo pro displej podél předloktí.</span></div>
   <div class="terminal" id="terminal">
     <header class="topbar">
-      <div class="identity"><span class="monogram">T</span><div><strong>OSOBNÍ TERMINÁL</strong><small>ČS. ELEKTROTECHNICKÉ ZÁVODY · P.T. 37</small></div></div>
+      <button type="button" id="homeLogo" class="identity brand-home" aria-label="Zpět na hlavní nabídku" title="Hlavní nabídka"><span class="monogram" aria-hidden="true">T</span><span class="identity-text"><strong>OSOBNÍ TERMINÁL</strong><small>ČS. ELEKTROTECHNICKÉ ZÁVODY · P.T. 37</small></span></button>
       <div class="top-state"><span id="connectivity" aria-live="polite">MÍSTNÍ REŽIM</span><span class="status-dot"></span></div>
     </header>
     <main>
@@ -58,10 +58,10 @@
       </section>
       <section id="settings" class="page" aria-labelledby="settingsTitle">
         <div class="section-title"><h1 id="settingsTitle">04 / NASTAVENÍ</h1><span>SYSTÉM TERMINÁLU</span></div>
-        <div class="two-col"><div class="panel"><h2>REŽIM ZOBRAZENÍ</h2><p>Preferovaná orientace: NA ŠÍŘKU. Režim celé obrazovky je nastaven při instalaci na plochu telefonu, pokud jej prohlížeč podporuje.</p><button class="solid" id="fullBtn">ZKUSIT CELOU OBRAZOVKU</button><p class="muted" id="fullStatus"></p></div><div class="panel"><h2>PAMĚŤ A ÚDAJE</h2><p>Deník je ukládán jen do lokální paměti tohoto prohlížeče. Odstraněním dat webu o něj můžete přijít.</p><button class="outline" id="exportBtn">EXPORTOVAT DENÍK (.TXT)</button><p class="muted">P.T. 37 · KONCEPČNÍ PROTOTYP 0.1</p></div></div>
+        <div class="two-col"><div class="panel"><h2>REŽIM ZOBRAZENÍ</h2><p>Preferovaná orientace: NA ŠÍŘKU. Režim celé obrazovky je nastaven při instalaci na plochu telefonu, pokud jej prohlížeč podporuje.</p><button class="solid" id="fullBtn">ZKUSIT CELOU OBRAZOVKU</button><p class="muted" id="fullStatus"></p></div><div class="panel"><h2>PAMĚŤ A ÚDAJE</h2><p>Deník je ukládán jen do lokální paměti tohoto prohlížeče. Odstraněním dat webu o něj můžete přijít.</p><button class="outline" id="exportBtn">EXPORTOVAT DENÍK (.TXT)</button><p class="muted">P.T. 37 · KONCEPČNÍ PROTOTYP 0.2</p></div></div>
       </section>
     </main>
-    <footer><div class="footer-label">TESLA · P.T. 37 <span class="faint">/ PROTOTYP</span></div><nav aria-label="Základní navigace"><button id="homeBtn">⌂ HLAVNÍ NABÍDKA</button></nav><div class="footer-clock" id="footerClock">--:--</div></footer>
+    <footer><div class="footer-label">P.T. 37 <span class="faint">/ VERZE 0.2</span></div><div class="footer-clock" id="footerClock">--:--</div></footer>
   </div>
   <script src="./app.js" defer></script>
 </body>

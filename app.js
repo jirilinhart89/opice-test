@@ -14,11 +14,11 @@ function formatNow(){
  const now = new Date();
  $('clock').textContent = now.toLocaleTimeString('cs-CZ',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
  $('footerClock').textContent = now.toLocaleTimeString('cs-CZ',{hour:'2-digit',minute:'2-digit',hour12:false});
- $('date').textContent = now.toLocaleDateString('cs-CZ',{weekday:'long',day:'numeric',month:'long',year:'numeric'}).toLocaleUpperCase('cs-CZ');
+ $('date').textContent = now.toLocaleDateString('cs-CZ',{weekday:'long',day:'numeric',month:'long'}).toLocaleUpperCase('cs-CZ');
 }
 function showPage(name){document.querySelectorAll('.page').forEach(n=>n.classList.toggle('active',n.id===name));}
 document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.go)));
-$('homeBtn').addEventListener('click',()=>showPage('home'));
+$('homeLogo').addEventListener('click',()=>showPage('home'));
 function readNotes(){try {const data=JSON.parse(localStorage.getItem(STORAGE)||'[]');return Array.isArray(data)?data:[];}catch{return [];}}
 function storeNotes(notes){try{localStorage.setItem(STORAGE,JSON.stringify(notes));return true;}catch{return false;}}
 function renderNotes(){
@@ -39,4 +39,10 @@ $('fullBtn').addEventListener('click',async()=>{try{if(!document.fullscreenEleme
 function status(){ $('connectivity').textContent=navigator.onLine?'MÍSTNÍ REŽIM':'BEZ SPOJENÍ'; }
 window.addEventListener('online',status);window.addEventListener('offline',status);
 formatNow();setInterval(formatNow,1000);status();renderNotes();renderEncyclopedia();
-if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));}
+if('serviceWorker' in navigator){
+  let reloadingForUpdate=false;
+  navigator.serviceWorker.addEventListener('controllerchange',()=>{
+    if(!reloadingForUpdate){reloadingForUpdate=true;window.location.reload();}
+  });
+  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+}

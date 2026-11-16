@@ -1,4 +1,4 @@
-OSOBNÍ TERMINÁL P.T. 37 — prototyp 0.1
+OSOBNÍ TERMINÁL P.T. 37 — prototyp 0.2
 ======================================
 Tento balíček obsahuje webovou aplikaci ve stylu jantarového retro terminálu.
 
@@ -30,3 +30,19 @@ POZOR
 - Offline mapa není součástí prototypu; GPS může fungovat bez internetu,
   otevření mapové služby připojení potřebuje.
 - Nápis P.T. 37 a značení TESLA jsou prozatímní grafickou stylizací.
+
+NOVINKY VERZE 0.2
+- Kliknutím na horní znak T (či název) návrat do hlavní nabídky.
+- V dolní liště již pouze označení verze a aktuální čas.
+- Datum bez roku; hodiny a informace posunuty výše.
+- Větší a tučnější text, větší ikonky, popisky a dotykové cíle.
+- Rezerva pro přední kameru vlevo uprostřed v režimu na šířku.
+- Poznámky z předchozí verze zůstávají uložené (stejná adresa a prohlížeč).
+
+AKTUALIZACE NA GITHUB PAGES
+- Nahraďte všechny soubory novou verzí v kořeni stejného repozitáře;
+  zachovejte původní HTTPS adresu.
+- Soubory nahrajte rozbalené, nikoli jako ZIP.
+- Offline cache má nové označení; po nasazení aplikaci zavřete a znovu
+  otevřete. Pokud se objeví stará verze, aplikaci znovu načtěte.
+- Není nutné přeinstalovat aplikaci ani mazat její data.
