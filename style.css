@@ -304,3 +304,6 @@ footer {font-size:clamp(13px,1.5vw,17px)}
 @media (orientation:landscape) and (max-height:390px) {
   .monogram.shield-mark {width:33px;height:35px}
 }
+
+/* VZ. 37 v0.9: znak je vložen přímo v HTML a nevyžaduje samostatné načtení. */
+.shield-mark img { width:100%; height:100%; display:block; opacity:1; visibility:visible; }
