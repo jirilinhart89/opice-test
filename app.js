@@ -52,11 +52,11 @@ const enc = [
  {title:'CIVILNÍ OBRANA',body:'Předkoncová organizace spojená s přípravou obyvatelstva na nebezpečí, ochranou civilistů a budováním krytů. Nálezy jejích plánů a označení jsou časté.\n\nUPOZORNĚNÍ: Archivní plány nemusí odpovídat stavu terénu.'},
  {title:'LEGIONÁŘI',body:'Pověsti vyprávějí o ozbrojených poutnících, kteří pro Republiku putovali přes vzdálené země. Dobové prameny i lidové písně jim připisují různé činy. Přesné časové zařazení je sporné.'},
  {title:'SLOVENSKO',body:'Země východně od Moravy, spojovaná s Republikou. Dochované mapy se neshodují v jejím politickém postavení. Příběhy o Tisovi a Mečiarovi se v lidovém podání někdy prolínají.'},
- {title:'KONEC / PÁD',body:'Obecné označení pro zánik starého světa. Mezi tradovaná vysvětlení patří války, havárie, rozpad zásobování a dlouhotrvající krize. Datum ani příčina nejsou všeobecně přijímány.'}
- {title:'V BOJ',body:'Listinné důkazy naznačují propojení tzv. Odboje s obdobím okupace Republiky. Symbolika lva, drtícího v tlapách symboly zla.'}
- {title:'KNIHOVNA',body:'Knihovna v Rust Haven je místem odpočinku, vzdělání, kultury a čaje.'}
- {title:'ČAJ',body:'Čaj je palivo, které z Knihovny pochází, a jehož síla probere i toho nejvíce zmoženého ducha.'}
- {title:'SPALOVAČI',body:'1. Spalovačský desant je skupinou žoldnéřů, jež našli pod praporem společnou řeč i poslání. Se ctí a smyslem pro povinnost se vydávají tam, kam se jiní neodváží.\n\nNehledě na osobní oběti pracují pro dobro města, které je přijalo.'}
+ {title:'KONEC / PÁD',body:'Obecné označení pro zánik starého světa. Mezi tradovaná vysvětlení patří války, havárie, rozpad zásobování a dlouhotrvající krize. Datum ani příčina nejsou všeobecně přijímány.'},
+ {title:'V BOJ',body:'Listinné důkazy naznačují propojení tzv. Odboje s obdobím okupace Republiky. Symbolika lva, drtícího v tlapách symboly zla.'},
+ {title:'KNIHOVNA',body:'Knihovna v Rust Haven je místem odpočinku, vzdělání, kultury a čaje.'},
+ {title:'ČAJ',body:'Čaj je palivo, které z Knihovny pochází, a jehož síla probere i toho nejvíce zmoženého ducha.'},
+ {title:'SPALOVAČI',body:'1. Spalovačský desant je skupinou žoldnéřů, jež našli pod praporem společnou řeč i poslání. Se ctí a smyslem pro povinnost se vydávají tam, kam se jiní neodváží.\n\nNehledě na osobní oběti pracují pro dobro města, které je přijalo.'},
 ];
 
 /*
