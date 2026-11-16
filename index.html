@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0c0906" />
+  <meta name="application-name" content="Osobní terminál" />
+  <meta name="description" content="Retrofuturistický osobní terminál – prototyp PWA pro nošení na předloktí." />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./icons/icon-192.png" sizes="192x192" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Osobní terminál — P.T. 37</title>
+</head>
+<body>
+  <div id="rotateNotice" aria-live="polite"><div class="turn-icon">↻</div><strong>OTOČTE TERMINÁL NA ŠÍŘKU</strong><span>Rozhraní bylo navrženo pro displej podél předloktí.</span></div>
+  <div class="terminal" id="terminal">
+    <header class="topbar">
+      <div class="identity"><span class="monogram">T</span><div><strong>OSOBNÍ TERMINÁL</strong><small>ČS. ELEKTROTECHNICKÉ ZÁVODY · P.T. 37</small></div></div>
+      <div class="top-state"><span id="connectivity" aria-live="polite">MÍSTNÍ REŽIM</span><span class="status-dot"></span></div>
+    </header>
+    <main>
+      <section id="home" class="page active" aria-labelledby="homeTitle">
+        <div class="home-left">
+          <div class="eyebrow" id="homeTitle">ÚSTŘEDNÍ INFORMAČNÍ SYSTÉM</div>
+          <div class="clock" id="clock">--:--:--</div>
+          <div class="date" id="date">NAČÍTÁNÍ DATA...</div>
+          <div class="rule"></div>
+          <div class="data-row"><span>STAV PŘÍSTROJE</span><strong>PROVOZ</strong></div>
+          <div class="data-row"><span>ULOŽENÉ ZÁZNAMY</span><strong id="notesCount">0</strong></div>
+          <div class="data-row"><span>POLOHA</span><strong id="locationSummary">NEZJIŠTĚNA</strong></div>
+          <div class="system-msg">SPOJENÍ S ÚSTŘEDÍM PŘERUŠENO</div>
+        </div>
+        <div class="home-right">
+          <button class="module" data-go="map"><span class="module-no">01</span><span class="module-icon">⌖</span><strong>MAPA A POLOHA</strong></button>
+          <button class="module" data-go="notes"><span class="module-no">02</span><span class="module-icon">▤</span><strong>DENÍK</strong></button>
+          <button class="module" data-go="encyclopedia"><span class="module-no">03</span><span class="module-icon">▦</span><strong>ENCYKLOPEDIE</strong></button>
+          <button class="module" data-go="settings"><span class="module-no">04</span><span class="module-icon">⚙</span><strong>NASTAVENÍ</strong></button>
+        </div>
+      </section>
+      <section id="map" class="page" aria-labelledby="mapTitle">
+        <div class="section-title"><h1 id="mapTitle">01 / MAPA A POLOHA</h1><span>DRUŽICOVÁ NAVIGACE</span></div>
+        <div class="two-col">
+          <div class="panel"><p>Aktuální zeměpisná poloha telefonu. Určení polohy vyžaduje souhlas a GPS signál.</p><button class="solid" id="locateBtn">ZJISTIT POLOHU</button><div class="coordinates" id="coordinates">SEVER: —<br>VÝCHOD: —<br>PŘESNOST: —</div><div class="muted" id="locateStatus" role="status">Poloha dosud nebyla zjištěna.</div></div>
+          <div class="panel"><h2>MAPOVÉ PODKLADY</h2><p>Prototyp zobrazuje souřadnice. Otevření skutečné mapy vyžaduje internet. Offline mapy budou samostatná budoucí funkce.</p><a class="solid link-btn disabled" id="mapLink" href="#" target="_blank" rel="noopener noreferrer" aria-disabled="true">OTEVŘÍT MAPU</a><p class="muted">Poloha není odesílána na server aplikace. Otevřením mapy ji však předáte mapové službě.</p></div>
+        </div>
+      </section>
+      <section id="notes" class="page" aria-labelledby="notesTitle">
+        <div class="section-title"><h1 id="notesTitle">02 / POLNÍ DENÍK</h1><span>OSOBNÍ PAMĚŤ</span></div>
+        <div class="two-col notes-grid">
+          <div class="panel"><label for="noteText">NOVÝ ZÁZNAM</label><textarea id="noteText" rows="4" placeholder="Zapište pozorování, místo nebo událost..."></textarea><div class="actions"><button class="solid" id="saveNote">ULOŽIT ZÁZNAM</button><span class="muted" id="saveStatus" role="status"></span></div></div>
+          <div class="panel scroll-panel"><h2>ARCHIV ZÁZNAMŮ</h2><div id="noteList" class="note-list"></div></div>
+        </div>
+      </section>
+      <section id="encyclopedia" class="page" aria-labelledby="encTitle">
+        <div class="section-title"><h1 id="encTitle">03 / CESTOVNÍ ENCYKLOPEDIE</h1><span>LOKÁLNÍ ARCHIV</span></div>
+        <div class="two-col encyclopedia-grid"><div class="panel scroll-panel"><h2>REJSTŘÍK HESEL</h2><div class="entry-list" id="entryList"></div></div><article class="panel scroll-panel"><h2 id="entryTitle">VYBERTE HESLO</h2><div id="entryBody">Databáze je dostupná bez připojení.</div></article></div>
+      </section>
+      <section id="settings" class="page" aria-labelledby="settingsTitle">
+        <div class="section-title"><h1 id="settingsTitle">04 / NASTAVENÍ</h1><span>SYSTÉM TERMINÁLU</span></div>
+        <div class="two-col"><div class="panel"><h2>REŽIM ZOBRAZENÍ</h2><p>Preferovaná orientace: NA ŠÍŘKU. Režim celé obrazovky je nastaven při instalaci na plochu telefonu, pokud jej prohlížeč podporuje.</p><button class="solid" id="fullBtn">ZKUSIT CELOU OBRAZOVKU</button><p class="muted" id="fullStatus"></p></div><div class="panel"><h2>PAMĚŤ A ÚDAJE</h2><p>Deník je ukládán jen do lokální paměti tohoto prohlížeče. Odstraněním dat webu o něj můžete přijít.</p><button class="outline" id="exportBtn">EXPORTOVAT DENÍK (.TXT)</button><p class="muted">P.T. 37 · KONCEPČNÍ PROTOTYP 0.1</p></div></div>
+      </section>
+    </main>
+    <footer><div class="footer-label">TESLA · P.T. 37 <span class="faint">/ PROTOTYP</span></div><nav aria-label="Základní navigace"><button id="homeBtn">⌂ HLAVNÍ NABÍDKA</button></nav><div class="footer-clock" id="footerClock">--:--</div></footer>
+  </div>
+  <script src="./app.js" defer></script>
+</body>
+</html>

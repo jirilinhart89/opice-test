@@ -1,0 +1,17 @@
+{
+  "name": "Osobní terminál P.T. 37",
+  "short_name": "P.T. 37",
+  "description": "Jantarový retrofuturistický terminál – osobní cestovní encyklopedie a polní deník.",
+  "id": "./",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#090805",
+  "theme_color": "#090805",
+  "lang": "cs",
+  "icons": [
+    {"src":"./icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}
