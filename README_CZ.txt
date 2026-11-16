@@ -1,30 +1,13 @@
-OSOBNÍ TERMINÁL VZ. 37 — VERZE 0.9
-===================================
+OSOBNÍ TERMINÁL VZ. 37 — VERZE 1.2
 
-NOVINKA
-- Opraven znak českého lva v levé části záhlaví.
-- Ikona je vložena přímo do index.html (data URL), takže není závislá na cestě
-  k obrázku ani na jeho samostatném načítání v prohlížeči.
-- Tlačítko se lvem i nadále otevírá hlavní obrazovku.
-- Pomalá pulsace kontrolky MÍSTNÍ REŽIM a slova PŘERUŠENO zůstává zachována.
-- Původní soubor icons/cesky-lev.png je v balíčku jen jako zdroj pro další úpravy.
+INSTALACE: Nahrajte obsah této složky do kořene repozitáře GitHub Pages (veřejný repozitář). Zachovejte všechny soubory včetně obrázků, index.html a sw.js. Není zapotřebí žádný serverový kód.
 
-INSTALACE / AKTUALIZACE NA GITHUB PAGES
-1. Rozbal ZIP a nahraj všechny soubory a složku icons do kořene stejného
-   veřejného repozitáře jako předchozí verzi.
-2. Ulož změny (commit) a nech GitHub Pages publikovat nové soubory.
-3. Otevři aplikaci. V zápatí zkontroluj text VERZE 0.9.
-4. Pokud se zobrazuje 0.8, vyčkej na aktualizaci PWA a aplikaci úplně zavři
-   a znovu otevři. Můžeš rovněž otevřít její webovou adresu v Chromu
-   a stránku obnovit. Kvůli deníku nemaž data aplikace.
+NOVINKA: 02 / POLNÍ NAVIGÁTOR
+• Kompas využívá pouze absolutní orientační data; aktivuje se tlačítkem a může vyžadovat oprávnění. Na některých zařízeních není podporován. V režimu landscape ověřte směr orientace.
+• GPS poloha a nadmořská výška vyžadují oprávnění. Pokud je výška ze senzoru nedostupná, ukáže se NEDOSTUPNÁ. GPS měří výšku vůči referenčnímu elipsoidu WGS84, nikoliv přesnou nadmořskou výšku vůči hladině moře.
+• Východ a západ Slunce se vypočítají po zjištění GPS. Odhad je geometrický a nezohledňuje horizont, okolní budovy ani počasí. Všechny výpočty probíhají offline.
+• Fáze Měsíce se počítá místně z času přístroje, bez GPS.
 
-TECHNICKÉ ÚDAJE
-Položky můžeš snadno upravovat v app.js v objektu TECH_SPECS.
+LOKÁLNÍ DENÍK: Ukládání stále používá klíč pt37-notes-v1, takže při aktualizaci stejného původu data zachováte. Před většími změnami si deník exportujte.
 
-ZÁPISY
-Záznamy se ukládají lokálně pod stejným klíčem jako ve starších verzích;
-aktualizace při zachování adresy aplikace je nemá mazat.
-
-UPOZORNĚNÍ
-Doručování systémových notifikací i režim celé obrazovky závisejí na
-konkrétní verzi Androidu a prohlížeče.
+SOUČÁSTI VÝROBKU: index.html, app.js, style.css, sw.js, manifest.webmanifest, pozadí, loga a ikony.

@@ -40,7 +40,7 @@ textarea {font-size:17px; line-height:1.5; min-height:90px}
 footer {font-size:clamp(13px,1.5vw,17px)}
 .footer-clock {font-size:clamp(15px,1.9vw,20px);font-weight:800}
 
-/* U telefonů na šířku zůstává výřez přední kamery vlevo uprostřed obrazovky.
+/* U přístrojů na šířku zůstává výřez přední kamery vlevo uprostřed obrazovky.
    Zářez může u některých prohlížečů hlásit safe-area-inset-left=0,
    proto je zde i pevná rezerva pro obsah obrazovek. */
 @media (orientation: landscape) and (max-height: 550px) {
@@ -307,3 +307,147 @@ footer {font-size:clamp(13px,1.5vw,17px)}
 
 /* VZ. 37 v0.9: znak je vložen přímo v HTML a nevyžaduje samostatné načtení. */
 .shield-mark img { width:100%; height:100%; display:block; opacity:1; visibility:visible; }
+
+/* -----------------------------------------------------------
+   VZ. 37 / 1.0 — VÝROBNÍ ZNAK PRAGA NA STRÁNCE TECHNICKÝCH ÚDAJŮ
+   Logo je zabudováno v index.html pro spolehlivé offline zobrazení.
+   Samostatná kopie je v souboru logo-praga.webp.
+   ----------------------------------------------------------- */
+.maker-brand {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  border-bottom:1px solid var(--line);
+  margin:0 0 11px;
+  padding:0 4px 8px;
+}
+.maker-logo {
+  display:block;
+  width:min(100%, 420px);
+  height:clamp(80px, 23vh, 130px);
+  object-fit:contain;
+  mix-blend-mode:screen;
+  filter:contrast(1.07) brightness(1.08);
+}
+.maker-credit {
+  color:var(--bright);
+  font-size:clamp(11px, 1.36vw, 15px);
+  font-weight:800;
+  letter-spacing:.09em;
+  text-align:center;
+}
+@media (orientation:landscape) and (max-height:400px) {
+  .maker-logo{height:clamp(65px,20vh,95px)}
+  .maker-brand{margin-bottom:7px;padding-bottom:5px}
+}
+
+
+/* VZ. 37 / 1.1 — kompaktní ukazatel akumulátoru v horním panelu. */
+.battery-indicator {
+  display:flex;
+  align-items:center;
+  gap:clamp(5px,.7vw,10px);
+  min-width:0;
+  padding:3px 0;
+  font-size:clamp(11px,1.25vw,15px);
+  font-weight:800;
+  color:var(--bright);
+  white-space:nowrap;
+}
+.battery-heading{color:var(--amber);letter-spacing:.04em}
+.battery-icon{
+  width:clamp(28px,3.5vw,42px);
+  height:clamp(13px,1.55vw,18px);
+  border:2px solid var(--bright);
+  border-radius:2px;
+  display:inline-flex;
+  align-items:stretch;
+  padding:2px;
+  position:relative;
+  flex:0 0 auto;
+}
+.battery-icon::after{
+  content:"";
+  position:absolute;
+  width:3px;
+  height:50%;
+  right:-5px;
+  top:25%;
+  border-radius:0 2px 2px 0;
+  background:var(--bright);
+}
+.battery-fill{
+  display:block;
+  width:0;
+  background:var(--bright);
+  transition:width .65s ease;
+  box-shadow:0 0 5px rgba(255,209,138,.35);
+}
+.battery-fill.battery-low{background:var(--amber)}
+.battery-percent{min-width:3.5ch;text-align:right;font-variant-numeric:tabular-nums}
+.battery-runtime{color:var(--amber);margin-left:auto;font-weight:700}
+.battery-runtime strong{color:var(--bright);font-weight:800}
+@media (orientation:landscape) and (max-height:400px){
+  .battery-indicator{font-size:clamp(10px,1.18vw,13px);gap:6px;padding:1px 0}
+  .battery-icon{height:13px;width:29px;padding:1px;border-width:1px}
+}
+@media (prefers-reduced-motion:reduce){.battery-fill{transition:none}}
+
+/* ============================================================
+   VZ. 37 / 1.2 — POLNÍ NAVIGÁTOR
+   ============================================================ */
+.nav-layout{display:grid;grid-template-columns:1fr 1fr;gap:10px;flex:1;min-height:0;min-width:0}
+.nav-layout>.panel{padding:clamp(8px,1vw,14px);min-height:0;overflow:auto;background:rgba(8,5,3,.78)}
+.nav-heading{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.nav-heading h2{margin-bottom:3px}
+.nav-heading strong{font-size:clamp(18px,2.4vw,29px);color:var(--bright)}
+.nav-compass-body{display:flex;align-items:center;gap:clamp(8px,1.4vw,22px);margin:2px 0 6px}
+.compass-disc{width:clamp(104px,14vw,152px);height:clamp(104px,14vw,152px);aspect-ratio:1;flex:0 0 auto;border:2px solid #ac7439;border-radius:50%;position:relative;box-shadow:inset 0 0 0 5px rgba(184,116,49,.12),0 0 18px rgba(172,116,57,.12);background:radial-gradient(circle,#291a0c70 0%,#09070566 80%)}
+.compass-disc:before,.compass-disc:after{content:"";position:absolute;left:50%;top:50%;width:85%;border-top:1px solid #9a6536;transform:translate(-50%,-50%)}
+.compass-disc:after{transform:translate(-50%,-50%) rotate(90deg)}
+.compass-disc .c-n,.compass-disc .c-e,.compass-disc .c-s,.compass-disc .c-w{position:absolute;font-size:clamp(12px,1.35vw,17px);font-weight:900;color:var(--bright);z-index:2;background:#140d08d9;line-height:1;padding:2px}
+.compass-disc .c-n{top:6px;left:50%;transform:translateX(-50%)}
+.compass-disc .c-s{bottom:6px;left:50%;transform:translateX(-50%)}
+.compass-disc .c-e{right:6px;top:50%;transform:translateY(-50%)}
+.compass-disc .c-w{left:6px;top:50%;transform:translateY(-50%)}
+.compass-needle{position:absolute;top:13%;bottom:13%;left:calc(50% - 2px);width:4px;background:linear-gradient(to bottom,var(--bright) 0%,var(--amber) 49%,#45351b 51%,#705331 100%);transform-origin:50% 50%;z-index:3;clip-path:polygon(50% 0%,100% 45%,100% 55%,50% 100%,0% 55%,0% 45%);filter:drop-shadow(0 0 4px #f4aa5588);transition:transform .22s linear}
+.compass-pivot{width:10px;height:10px;border-radius:50%;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--bright);z-index:4;border:2px solid #51310f}
+.nav-compass-side{display:flex;flex-direction:column;gap:8px;min-width:0;align-items:flex-start}
+.nav-large{font-size:clamp(14px,1.8vw,22px);line-height:1.2;color:var(--bright)}
+.nav-help{font-size:clamp(10px,1.08vw,13px)!important;margin:0 0 8px!important;color:#c39a61!important}
+.nav-gps-row{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #714a27aa;padding:5px 0;font-weight:800;font-size:clamp(11px,1.35vw,16px)}
+.nav-gps-row strong{color:var(--bright)}
+.nav-gps-controls{display:flex;align-items:center;gap:10px;margin-top:7px;flex-wrap:wrap}
+.nav-gps-controls .solid,.nav-compass-side .outline{font-size:clamp(12px,1.42vw,16px);min-height:36px;padding:7px 10px}
+.nav-astro-panel h2{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.nav-astro-panel h2 small{font-size:clamp(10px,1.2vw,13px);color:#b78c56;white-space:nowrap}
+.astro-times{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:5px}
+.astro-times>div{display:flex;flex-direction:column;gap:2px;border:1px solid #77532d;padding:7px 10px;background:#120a0455}
+.astro-times span,.sun-countdown span{color:#c18e4b;font-size:clamp(10px,1.23vw,15px);font-weight:800}
+.astro-times strong{font-size:clamp(21px,2.65vw,31px);color:var(--bright)}
+.sun-countdown{margin-top:7px;display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+.sun-countdown strong{font-size:clamp(17px,2.0vw,24px);color:var(--bright)}
+.nav-separator{border-top:1px solid #74502a;margin:8px 0}
+.moon-row{display:flex;align-items:center;gap:14px;min-height:68px}
+.moon-row canvas{width:clamp(59px,7vw,80px);height:clamp(59px,7vw,80px);flex:0 0 auto}
+.moon-lit{font-size:clamp(12px,1.4vw,17px);font-weight:800;padding-top:6px}
+.nav-astro-info{margin-top:8px!important}
+@media (orientation:landscape) and (max-height: 420px){
+ .nav-layout>.panel{padding:7px 10px}
+ .compass-disc{width:101px;height:101px}
+ .nav-compass-body{gap:9px;margin:0 0 3px}
+ .nav-compass-side{gap:4px}
+ .nav-help{font-size:10px!important;margin-bottom:3px!important}
+ .nav-gps-row{font-size:12px;padding:3px 0}
+ .nav-gps-controls{margin-top:4px}
+ .nav-gps-controls .solid,.nav-compass-side .outline{min-height:30px;padding:4px 8px;font-size:12px}
+ .astro-times>div{padding:4px 8px}
+ .astro-times strong{font-size:24px}
+ .sun-countdown{margin-top:4px}
+ .nav-separator{margin:5px 0}
+ .moon-row{min-height:56px}
+ .moon-row canvas{width:56px;height:56px}
+ .nav-astro-info{font-size:11px!important;margin:3px 0!important}
+}
