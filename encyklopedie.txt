@@ -35,3 +35,15 @@ Knihovna v Rust Haven je místem odpočinku, vzdělání, kultury a čaje.
 1. Spalovačský desant je skupinou žoldnéřů, jež našli pod praporem společnou řeč i poslání. Se ctí a smyslem pro povinnost se vydávají tam, kam se jiní neodváží.
 
 Nehledě na osobní oběti pracují pro dobro města, které je přijalo.
+
+## MASARYK
+Tomáš Garrigue Masaryk, známý též jako prezident Osvoboditel, byl jedním ze zakladatelů dávné Republiky.
+
+Podle dochovaných pramenů byl známý svou zálibou v jízdě na koni. 
+
+Jeho citátem jest například: "Tož demokracii bychom měli. Teď ještě nějaké ty demokraty."
+
+## LÁNY
+Osada ležící západně od Velké Prahy.
+
+Podle některých legend se zde nachází místo posledního odpočinku prezidenta Osvoboditele.
