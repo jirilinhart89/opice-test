@@ -1,7 +1,7 @@
 'use strict';
 const $ = (id) => document.getElementById(id);
 const STORAGE = 'pt37-notes-v1';
-const APP_VERSION = '1.1';
+const APP_VERSION = '1.3';
 let coords = null;
 
 /*
@@ -46,18 +46,38 @@ const TECH_SPECS = {
     'Praga akciová společnost, UPPDKV, 2037, patentově chráněno.'
 };
 
-const enc = [
- {title:'OSOBNÍ TERMINÁL VZ. 37',body:'Osobní počítač s integrovanou cestovní encyklopedií, určený pro evidenci poznámek, orientaci v terénu a přístup k místním encyklopedickým údajům. Jde o přístroj určený k nošení na předloktí.\n\nVojenské i civilní využití, především u terénních pracovníků, zeměměřičů, prospektorů nebo finančních úředníků.'},
- {title:'REPUBLIKA',body:'Souhrnné označení někdejšího státního zřízení a společného území Čech, Moravy, Slezska a Slovenska. Historické záznamy o jeho jednotlivých obdobích jsou neúplné.\n\nNěkteré komunity užívají název „Republika“ i dnes.'},
- {title:'CIVILNÍ OBRANA',body:'Předkoncová organizace spojená s přípravou obyvatelstva na nebezpečí, ochranou civilistů a budováním krytů. Nálezy jejích plánů a označení jsou časté.\n\nUPOZORNĚNÍ: Archivní plány nemusí odpovídat stavu terénu.'},
- {title:'LEGIONÁŘI',body:'Pověsti vyprávějí o ozbrojených poutnících, kteří pro Republiku putovali přes vzdálené země. Dobové prameny i lidové písně jim připisují různé činy. Přesné časové zařazení je sporné.'},
- {title:'SLOVENSKO',body:'Země východně od Moravy, spojovaná s Republikou. Dochované mapy se neshodují v jejím politickém postavení. Příběhy o Tisovi a Mečiarovi se v lidovém podání někdy prolínají.'},
- {title:'KONEC / PÁD',body:'Obecné označení pro zánik starého světa. Mezi tradovaná vysvětlení patří války, havárie, rozpad zásobování a dlouhotrvající krize. Datum ani příčina nejsou všeobecně přijímány.'},
- {title:'V BOJ',body:'Listinné důkazy naznačují propojení tzv. Odboje s obdobím okupace Republiky. Symbolika lva, drtícího v tlapách symboly zla.'},
- {title:'KNIHOVNA',body:'Knihovna v Rust Haven je místem odpočinku, vzdělání, kultury a čaje.'},
- {title:'ČAJ',body:'Čaj je palivo, které z Knihovny pochází, a jehož síla probere i toho nejvíce zmoženého ducha.'},
- {title:'SPALOVAČI',body:'1. Spalovačský desant je skupinou žoldnéřů, jež našli pod praporem společnou řeč i poslání. Se ctí a smyslem pro povinnost se vydávají tam, kam se jiní neodváží.\n\nNehledě na osobní oběti pracují pro dobro města, které je přijalo.'},
-];
+/*
+  ENCYKLOPEDIE
+  -----------
+  Hesla nejsou součástí JavaScriptu. Jsou v souboru "encyklopedie.txt".
+  Každé heslo začíná řádkem "## NÁZEV" a následuje prostý text.
+  Díky tomu mohou přibývat hesla bez úprav programového kódu.
+*/
+let encyclopediaLoadSequence = 0;
+
+function parseEncyclopedia(source) {
+  const entries = [];
+  let currentTitle = null;
+  let bodyLines = [];
+  const saveEntry = () => {
+    if (currentTitle !== null) {
+      entries.push({ title: currentTitle, body: bodyLines.join('\n').trim() });
+    }
+  };
+  for (const line of source.replace(/^\uFEFF/, '').split(/\r?\n/)) {
+    const heading = line.match(/^##[ \t]+(.+?)\s*$/);
+    if (heading) {
+      saveEntry();
+      currentTitle = heading[1].trim();
+      bodyLines = [];
+    } else if (currentTitle !== null) {
+      bodyLines.push(line);
+    }
+  }
+  saveEntry();
+  return entries;
+}
+
 
 /*
   STAV AKUMULÁTORU
@@ -122,6 +142,7 @@ function formatNow(){
 
 function showPage(name){
  if(name==='field-nav') navRefreshAstronomy();
+  if(name==='encyclopedia') loadEncyclopedia();
  document.querySelectorAll('.page').forEach(n=>n.classList.toggle('active',n.id===name));
 }
 
@@ -138,21 +159,52 @@ function renderNotes(){
 $('saveNote').addEventListener('click',()=>{const val=$('noteText').value.trim();if(!val){$('saveStatus').textContent='ZÁZNAM JE PRÁZDNÝ';return;}const notes=readNotes();notes.unshift({text:val,at:new Date().toISOString()});if(!storeNotes(notes)){$('saveStatus').textContent='UKLÁDÁNÍ SELHALO';return;}$('noteText').value='';$('saveStatus').textContent='ULOŽENO';renderNotes();});
 $('exportBtn').addEventListener('click',()=>{const notes=readNotes();const body='OSOBNÍ TERMINÁL VZ. 37 — POLNÍ DENÍK\n\n'+notes.map(n=>new Date(n.at).toLocaleString('cs-CZ')+'\n'+n.text).join('\n\n-----\n\n');const blob=new Blob([body],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='vz37-denik.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);});
 
-function renderEncyclopedia(){
+function renderEncyclopedia(entries){
  const list=$('entryList');
  list.replaceChildren();
- enc.forEach((e,i)=>{
+ entries.forEach((e,i)=>{
    const b=document.createElement('button');
    b.textContent=(i+1).toString().padStart(2,'0')+' / '+e.title;
    b.addEventListener('click',()=>{
      list.querySelectorAll('button').forEach(x=>x.classList.remove('selected'));
      b.classList.add('selected');
      $('entryTitle').textContent=e.title;
-     $('entryBody').textContent=e.body;
+     $('entryBody').textContent=e.body || 'ZÁZNAM ZATÍM NEMÁ TEXT.';
    });
    list.append(b);
    if(i===0)b.click();
  });
+}
+
+async function loadEncyclopedia(){
+ const requestId=++encyclopediaLoadSequence;
+ const list=$('entryList');
+ const item=document.createElement('p');
+ item.textContent='NAČÍTÁM ENCYKLOPEDII...';
+ list.replaceChildren(item);
+ $('entryTitle').textContent='CESTOVNÍ ENCYKLOPEDIE';
+ $('entryBody').textContent='Načítání místního archivu.';
+ try {
+   // Na síti vždy načti nové heslo. Offline ho poskytne Service Worker z cache.
+   const response=await fetch('./encyklopedie.txt', {cache:'no-store'});
+   if(!response.ok) throw new Error('HTTP '+response.status);
+   const entries=parseEncyclopedia(await response.text());
+   if(requestId!==encyclopediaLoadSequence) return;
+   if(!entries.length) {
+     list.replaceChildren();
+     $('entryTitle').textContent='ARCHIV JE PRÁZDNÝ';
+     $('entryBody').textContent='Přidejte první heslo do souboru encyklopedie.txt: řádek začínající ## a pod ním text.';
+     return;
+   }
+   renderEncyclopedia(entries);
+ } catch (error) {
+   if(requestId!==encyclopediaLoadSequence) return;
+   item.textContent='ARCHIV NENÍ DOSTUPNÝ';
+   list.replaceChildren(item);
+   $('entryTitle').textContent='CHYBA NAČÍTÁNÍ';
+   $('entryBody').textContent='Soubor encyklopedie.txt se nepodařilo načíst. Zkontrolujte, zda je v kořeni webu. Při prvním spuštění je potřeba internet; následně funguje i offline.';
+   console.warn('Encyklopedie není dostupná:',error);
+ }
 }
 
 function renderSpecs(){
@@ -193,7 +245,7 @@ $('mapLink').addEventListener('click',(ev)=>{if(!coords)ev.preventDefault()});
 $('fullBtn').addEventListener('click',async()=>{try{if(!document.fullscreenElement && document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();if(screen.orientation&&screen.orientation.lock)await screen.orientation.lock('landscape');$('fullStatus').textContent='REŽIM SPUŠTĚN / POKUS O UZAMČENÍ ORIENTACE.';}catch{$('fullStatus').textContent='PROHLÍŽEČ NEPOVOLIL CELOU OBRAZOVKU NEBO UZAMČENÍ ORIENTACE. PO INSTALACI NA PLOCHU TO MŮŽE FUNGOVAT LÉPE.';}});
 function status(){ $('connectivity').textContent=navigator.onLine?'MÍSTNÍ REŽIM':'BEZ SPOJENÍ'; }
 window.addEventListener('online',status);window.addEventListener('offline',status);
-formatNow();setInterval(formatNow,1000);status();renderNotes();renderEncyclopedia();renderSpecs();
+formatNow();setInterval(formatNow,1000);status();renderNotes();loadEncyclopedia();renderSpecs();
 initBattery();
 setInterval(updateBattery, 60000);
 document.addEventListener('visibilitychange', () => { if (!document.hidden) updateBattery(); });

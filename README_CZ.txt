@@ -1,13 +1,36 @@
-OSOBNÍ TERMINÁL VZ. 37 — VERZE 1.2
+OSOBNÍ TERMINÁL VZ. 37 – EDICE 1.3
+===================================================
 
-INSTALACE: Nahrajte obsah této složky do kořene repozitáře GitHub Pages (veřejný repozitář). Zachovejte všechny soubory včetně obrázků, index.html a sw.js. Není zapotřebí žádný serverový kód.
+NOVINKA: Hesla encyklopedie jsou nyní v jediném textovém souboru:
+    encyklopedie.txt
 
-NOVINKA: 02 / POLNÍ NAVIGÁTOR
-• Kompas využívá pouze absolutní orientační data; aktivuje se tlačítkem a může vyžadovat oprávnění. Na některých zařízeních není podporován. V režimu landscape ověřte směr orientace.
-• GPS poloha a nadmořská výška vyžadují oprávnění. Pokud je výška ze senzoru nedostupná, ukáže se NEDOSTUPNÁ. GPS měří výšku vůči referenčnímu elipsoidu WGS84, nikoliv přesnou nadmořskou výšku vůči hladině moře.
-• Východ a západ Slunce se vypočítají po zjištění GPS. Odhad je geometrický a nezohledňuje horizont, okolní budovy ani počasí. Všechny výpočty probíhají offline.
-• Fáze Měsíce se počítá místně z času přístroje, bez GPS.
+JAK PŘIDAT HESLO:
+1. Otevřete encyklopedie.txt v editoru prostého textu (UTF-8).
+2. Za poslední heslo vložte prázdný řádek a nový nadpis s dvěma mřížkami:
 
-LOKÁLNÍ DENÍK: Ukládání stále používá klíč pt37-notes-v1, takže při aktualizaci stejného původu data zachováte. Před většími změnami si deník exportujte.
+## NÁZEV NOVÉHO HESLA
+Zde napíšete první odstavec.
 
-SOUČÁSTI VÝROBKU: index.html, app.js, style.css, sw.js, manifest.webmanifest, pozadí, loga a ikony.
+Tady může pokračovat další odstavec. Uvozovky, čárky a dvojtečky jsou v pořádku.
+
+3. Soubor uložte a nahrajte do kořenové složky vašeho GitHub Pages repozitáře.
+4. Po nasazení otevřete v aplikaci Encyklopedii; při otevření znovu načte hesla.
+   Pro aktualizaci hesel už není třeba měnit app.js ani sw.js.
+
+DŮLEŽITÉ:
+- Nadpis každého hesla musí být na samostatném řádku a začínat „## “.
+- Text přísluší heslu až do dalšího řádku začínajícího „## “.
+- Název a text se zobrazují jako obyčejný text. HTML není podporováno.
+- Při online provozu se načte aktuální archiv. Při offline provozu
+  se použije poslední dříve načtená verze uložená v PWA cache.
+- Na GitHub Pages se změny mohou projevit s krátkým zpožděním.
+
+INSTALACE VERZE 1.3:
+Nahrajte VŠECHNY soubory z tohoto ZIPu do stejného veřejného GitHub
+repozitáře jako stávající aplikaci. Dodržte podsložku icons/.
+Při prvním nasazení je potřeba nahrát také encyklopedie.txt i sw.js.
+Stávající zápisky deníku se uchovávají pod stejným klíčem
+pt37-notes-v1 v localStorage při zachování stejné adresy aplikace.
+Neodstraňujte data webu prohlížeče, jinak můžete o deník přijít.
+
+Soubor app.js obsahuje vaše upravené technické údaje Praga a další funkce.

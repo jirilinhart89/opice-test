@@ -1,0 +1,37 @@
+## OSOBNÍ TERMINÁL VZ. 37
+Osobní počítač s integrovanou cestovní encyklopedií, určený pro evidenci poznámek, orientaci v terénu a přístup k místním encyklopedickým údajům. Jde o přístroj určený k nošení na předloktí.
+
+Vojenské i civilní využití, především u terénních pracovníků, zeměměřičů, prospektorů nebo finančních úředníků.
+
+## REPUBLIKA
+Souhrnné označení někdejšího státního zřízení a společného území Čech, Moravy, Slezska a Slovenska. Historické záznamy o jeho jednotlivých obdobích jsou neúplné.
+
+Některé komunity užívají název „Republika“ i dnes.
+
+## CIVILNÍ OBRANA
+Předkoncová organizace spojená s přípravou obyvatelstva na nebezpečí, ochranou civilistů a budováním krytů. Nálezy jejích plánů a označení jsou časté.
+
+UPOZORNĚNÍ: Archivní plány nemusí odpovídat stavu terénu.
+
+## LEGIONÁŘI
+Pověsti vyprávějí o ozbrojených poutnících, kteří pro Republiku putovali přes vzdálené země. Dobové prameny i lidové písně jim připisují různé činy. Přesné časové zařazení je sporné.
+
+## SLOVENSKO
+Země východně od Moravy, spojovaná s Republikou. Dochované mapy se neshodují v jejím politickém postavení. Příběhy o Tisovi a Mečiarovi se v lidovém podání někdy prolínají.
+
+## KONEC / PÁD
+Obecné označení pro zánik starého světa. Mezi tradovaná vysvětlení patří války, havárie, rozpad zásobování a dlouhotrvající krize. Datum ani příčina nejsou všeobecně přijímány.
+
+## V BOJ
+Listinné důkazy naznačují propojení tzv. Odboje s obdobím okupace Republiky. Symbolika lva, drtícího v tlapách symboly zla.
+
+## KNIHOVNA
+Knihovna v Rust Haven je místem odpočinku, vzdělání, kultury a čaje.
+
+## ČAJ
+Čaj je palivo, které z Knihovny pochází, a jehož síla probere i toho nejvíce zmoženého ducha.
+
+## SPALOVAČI
+1. Spalovačský desant je skupinou žoldnéřů, jež našli pod praporem společnou řeč i poslání. Se ctí a smyslem pro povinnost se vydávají tam, kam se jiní neodváží.
+
+Nehledě na osobní oběti pracují pro dobro města, které je přijalo.
