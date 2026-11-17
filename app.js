@@ -144,36 +144,185 @@ function showPage(name){
  if(name==='field-nav') navRefreshAstronomy();
   if(name==='encyclopedia') loadEncyclopedia();
  document.querySelectorAll('.page').forEach(n=>n.classList.toggle('active',n.id===name));
+ if(name==='settings') document.querySelectorAll('#settings .panel').forEach(panel=>{panel.scrollTop=0;});
 }
 
-document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.go)));
-// Znak v záhlaví: návrat na úvodní obrazovku a pokus o obnovení režimu celé obrazovky.
-// requestFullscreen() musí zaznít přímo v obsluze skutečného kliknutí uživatele.
-$('homeLogo').addEventListener('click', () => {
+// Návrat přes znak Pragy (i budoucí tlačítka s data-go="home")
+// může zároveň obnovit fullscreen. Volání musí být přímo ve zpracování kliknutí.
+function returnHomeFromClick(){
   showPage('home');
-  if (document.fullscreenElement) return; // Už jsme ve fullscreen režimu.
-  const enterFullscreen = document.documentElement.requestFullscreen;
-  if (typeof enterFullscreen !== 'function') return;
+  if (document.fullscreenElement) return;
+  if (typeof document.documentElement.requestFullscreen !== 'function') return;
   try {
-    const request = enterFullscreen.call(document.documentElement);
-    // Neúspěch nikdy nezabrání návratu na hlavní obrazovku.
-    if (request && typeof request.catch === 'function') {
-      request.catch(() => {});
+    const result = document.documentElement.requestFullscreen();
+    if (result && typeof result.then === 'function') {
+      result.then(() => {
+        // Zamknutí orientace je volitelné a může být prohlížečem odmítnuto.
+        if (screen.orientation && typeof screen.orientation.lock === 'function') {
+          return screen.orientation.lock('landscape').catch(() => {});
+        }
+      }).catch(() => {});
     }
-  } catch (_) {
-    // Prohlížeč může přepnutí zakázat; návrat do nabídky přesto funguje.
+  } catch (_) { /* Návrat na úvodní stránku funguje i bez fullscreen. */ }
+}
+document.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => {
+  if (b.dataset.go === 'home') returnHomeFromClick();
+  else showPage(b.dataset.go);
+}));
+$('homeLogo').addEventListener('click',returnHomeFromClick);
+
+const USER_ID_STORAGE = 'pt37-user-id-v1';
+const isUserId = value => typeof value === 'string' && /^\d{5}$/.test(value);
+function readUserId(){
+  try { const id=localStorage.getItem(USER_ID_STORAGE); return isUserId(id)?id:null; }
+  catch (_) { return null; }
+}
+function showUserId(){
+  const id=readUserId();
+  $('homeUserId').textContent = id || '— — — — —';
+  $('userIdInput').value = id || '';
+}
+$('userIdInput').addEventListener('input', () => {
+  const field=$('userIdInput');
+  field.value=field.value.replace(/[^0-9]/g,'').slice(0,5);
+  $('userIdStatus').textContent='';
+});
+$('saveUserId').addEventListener('click', () => {
+  const id=$('userIdInput').value.trim();
+  if (id && !isUserId(id)) {
+    $('userIdStatus').textContent='ID MUSÍ OBSAHOVAT PŘESNĚ PĚT ČÍSLIC.';
+    return;
   }
+  try {
+    if (id) localStorage.setItem(USER_ID_STORAGE,id);
+    else localStorage.removeItem(USER_ID_STORAGE);
+  } catch (_) {
+    $('userIdStatus').textContent='ID SE NEPODAŘILO ULOŽIT.';
+    return;
+  }
+  showUserId();
+  $('userIdStatus').textContent=id ? `ID ${id} ULOŽENO.` : 'ID BYLO ODSTRANĚNO.';
 });
 
-function readNotes(){try {const data=JSON.parse(localStorage.getItem(STORAGE)||'[]');return Array.isArray(data)?data:[];}catch{return [];}}
-function storeNotes(notes){try{localStorage.setItem(STORAGE,JSON.stringify(notes));return true;}catch{return false;}}
-function renderNotes(){
- const list=$('noteList');list.replaceChildren();const notes=readNotes();$('notesCount').textContent=String(notes.length);
- if(!notes.length){const empty=document.createElement('p');empty.textContent='ARCHIV JE PRÁZDNÝ.';list.append(empty);return;}
- notes.forEach((n,i)=>{const article=document.createElement('article');article.className='note';const stamp=document.createElement('time');stamp.textContent=new Date(n.at).toLocaleString('cs-CZ');const p=document.createElement('p');p.textContent=n.text;const del=document.createElement('button');del.textContent='ODSTRANIT';del.setAttribute('aria-label','Odstranit záznam '+(i+1));del.addEventListener('click',()=>{if(confirm('Opravdu odstranit tento záznam?')){const updated=readNotes();updated.splice(i,1);if(storeNotes(updated)){renderNotes();}else alert('Nepodařilo se změnit archiv.');}});article.append(stamp,p,del);list.append(article);});
+// Původní klíč deníku se NEMĚNÍ. Starší zápisy nemají userId a zůstávají platné.
+function readNotes(){
+  try {const data=JSON.parse(localStorage.getItem(STORAGE)||'[]');return Array.isArray(data)?data:[];}
+  catch(_){return [];}
 }
-$('saveNote').addEventListener('click',()=>{const val=$('noteText').value.trim();if(!val){$('saveStatus').textContent='ZÁZNAM JE PRÁZDNÝ';return;}const notes=readNotes();notes.unshift({text:val,at:new Date().toISOString()});if(!storeNotes(notes)){$('saveStatus').textContent='UKLÁDÁNÍ SELHALO';return;}$('noteText').value='';$('saveStatus').textContent='ULOŽENO';renderNotes();});
-$('exportBtn').addEventListener('click',()=>{const notes=readNotes();const body='OSOBNÍ TERMINÁL VZ. 37 — POLNÍ DENÍK\n\n'+notes.map(n=>new Date(n.at).toLocaleString('cs-CZ')+'\n'+n.text).join('\n\n-----\n\n');const blob=new Blob([body],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='vz37-denik.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);});
+function storeNotes(notes){
+  try{localStorage.setItem(STORAGE,JSON.stringify(notes));return true;}
+  catch(_){return false;}
+}
+function noteId(n){return isUserId(n.userId) ? n.userId : null;}
+function renderNotes(){
+  const list=$('noteList');list.replaceChildren();
+  const notes=readNotes();$('notesCount').textContent=String(notes.length);
+  if(!notes.length){
+    const empty=document.createElement('p');empty.textContent='ARCHIV JE PRÁZDNÝ.';list.append(empty);return;
+  }
+  notes.forEach((n,i)=>{
+    const article=document.createElement('article');article.className='note';
+    const stamp=document.createElement('time');
+    const when=new Date(n.at);
+    stamp.textContent=(Number.isNaN(+when) ? 'DATUM NEZNÁMÉ' : when.toLocaleString('cs-CZ')) +
+      ' · ID UŽIVATELE: ' + (noteId(n)||'NEUVEDENO');
+    const p=document.createElement('p');p.textContent=n.text;
+    const del=document.createElement('button');del.textContent='ODSTRANIT';
+    del.setAttribute('aria-label','Odstranit záznam '+(i+1));
+    del.addEventListener('click',()=>{
+      if(confirm('Opravdu odstranit tento záznam?')){
+        const updated=readNotes();updated.splice(i,1);
+        if(storeNotes(updated))renderNotes();else alert('Nepodařilo se změnit archiv.');
+      }
+    });
+    article.append(stamp,p,del);list.append(article);
+  });
+}
+$('saveNote').addEventListener('click',()=>{
+  const val=$('noteText').value.trim();
+  if(!val){$('saveStatus').textContent='ZÁZNAM JE PRÁZDNÝ';return;}
+  const authorId=readUserId();
+  const notes=readNotes();
+  notes.unshift({text:val,at:new Date().toISOString(),userId:authorId});
+  if(!storeNotes(notes)){$('saveStatus').textContent='UKLÁDÁNÍ SELHALO';return;}
+  $('noteText').value='';
+  $('saveStatus').textContent=authorId ? `ULOŽENO / ID ${authorId}` : 'ULOŽENO / ID NEZADÁNO';
+  renderNotes();
+});
+
+// .TXT pro běžné čtení. Zpětný import používá .JSON kvůli zachování údajů.
+function downloadText(filename,mime,content){
+  const blob=new Blob([content],{type:mime});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');a.href=url;a.download=filename;
+  document.body.append(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),5000);
+}
+$('exportBtn').addEventListener('click',()=>{
+  const notes=readNotes();
+  const body='OSOBNÍ TERMINÁL VZ. 37 — POLNÍ DENÍK\n\n' +
+    notes.map(n=>{
+      const when=new Date(n.at);
+      return (Number.isNaN(+when)?'DATUM NEZNÁMÉ':when.toLocaleString('cs-CZ'))+
+        ' / ID UŽIVATELE: '+(noteId(n)||'NEUVEDENO')+'\n'+n.text;
+    }).join('\n\n-----\n\n');
+  downloadText('vz37-denik.txt','text/plain;charset=utf-8',body);
+  $('transferStatus').textContent='ČITELNÝ VÝPIS PŘIPRAVEN.';
+});
+$('exportJsonBtn').addEventListener('click',()=>{
+  const notes=readNotes().map(n=>({
+    text:n.text, at:n.at, userId:noteId(n)
+  }));
+  const archive={format:'pt37-denik',version:2,exportedAt:new Date().toISOString(),notes};
+  downloadText('vz37-denik-zaloha.json','application/json;charset=utf-8',JSON.stringify(archive,null,2));
+  $('transferStatus').textContent=`ZÁLOHA PŘIPRAVENA: ${notes.length} ZÁZNAMŮ.`;
+});
+$('importJsonBtn').addEventListener('click',()=>{$('importJsonFile').click();});
+$('importJsonFile').addEventListener('change', async()=>{
+  const field=$('importJsonFile');
+  const file=field.files && field.files[0];
+  field.value='';
+  if(!file)return;
+  if(file.size>5*1024*1024){$('transferStatus').textContent='SOUBOR JE PŘÍLIŠ VELKÝ (MAX. 5 MB).';return;}
+  try{
+    const payload=JSON.parse(await file.text());
+    if(!payload || payload.format!=='pt37-denik' || payload.version!==2 || !Array.isArray(payload.notes)){
+      throw new Error('Neplatný formát zálohy');
+    }
+    // Validace všech záznamů před jediným zápisem do lokální paměti.
+    const incoming=payload.notes.map(n=>{
+      if(!n || typeof n.text!=='string' || typeof n.at!=='string' ||
+         Number.isNaN(Date.parse(n.at)) ||
+         (n.userId!==null && n.userId!==undefined && !isUserId(n.userId))) {
+        throw new Error('Neplatný záznam v záloze');
+      }
+      return {text:n.text,at:n.at,userId:isUserId(n.userId)?n.userId:null};
+    });
+    const original=readNotes();
+    const fingerprint=n=>JSON.stringify([n.at,n.text,noteId(n)]);
+    const seen=new Set(original.map(fingerprint));
+    const unique=[];
+    for(const n of incoming){
+      const key=fingerprint(n);
+      if(!seen.has(key)){unique.push(n);seen.add(key);}
+    }
+    if(!unique.length){$('transferStatus').textContent='ŽÁDNÉ NOVÉ ZÁZNAMY K IMPORTU.';return;}
+    if(!confirm(`IMPORTOVAT ${unique.length} NOVÝCH ZÁZNAMŮ?\nExistující archiv zůstane zachován.`)){
+      $('transferStatus').textContent='IMPORT ZRUŠEN.';
+      return;
+    }
+    const merged=[...original,...unique].sort((a,b)=>Date.parse(b.at)-Date.parse(a.at));
+    if(!storeNotes(merged)){
+      $('transferStatus').textContent='IMPORT SELHAL: NEDOSTATEK PAMĚTI NEBO ZAKÁZANÉ ÚLOŽIŠTĚ.';
+      return;
+    }
+    renderNotes();
+    $('transferStatus').textContent=`IMPORT DOKONČEN: ${unique.length} NOVÝCH ZÁZNAMŮ.`;
+  } catch(err){
+    $('transferStatus').textContent='NEPLATNÝ SOUBOR JSON. ARCHIV NEBYL ZMĚNĚN.';
+    console.warn('Neplatná záloha deníku:',err);
+  }
+});
 
 function renderEncyclopedia(entries){
  const list=$('entryList');
@@ -258,10 +407,10 @@ $('locateBtn').addEventListener('click',()=>{
  navigator.geolocation.getCurrentPosition(p=>{const {latitude,longitude,accuracy}=p.coords;coords={latitude,longitude};navCoords={lat:latitude,lon:longitude};$('navPosition').textContent=latitude.toFixed(3)+'°, '+longitude.toFixed(3)+'°';$('navAltitude').textContent=Number.isFinite(p.coords.altitude)?Math.round(p.coords.altitude)+' m':'NEDOSTUPNÁ';$('navLocateStatus').textContent='GPS POLOHA ZJIŠTĚNA';navRefreshAstronomy();$('coordinates').textContent=`SEVER: ${latitude.toFixed(5)}°\nVÝCHOD: ${longitude.toFixed(5)}°\nPŘESNOST: ±${Math.round(accuracy)} m`;$('coordinates').style.whiteSpace='pre-line';$('locationSummary').textContent='URČENA';$('locateStatus').textContent='POLOHA BYLA URČENA.';const link=$('mapLink');link.href=`https://www.openstreetmap.org/?mlat=${encodeURIComponent(latitude)}&mlon=${encodeURIComponent(longitude)}#map=15/${encodeURIComponent(latitude)}/${encodeURIComponent(longitude)}`;link.classList.remove('disabled');link.removeAttribute('aria-disabled');},err=>{const msgs={1:'PŘÍSTUP K POLOZE BYL ZAMÍTNUT.',2:'POLOHA NENÍ DOSTUPNÁ.',3:'VYPRŠEL ČASOVÝ LIMIT.'};$('locateStatus').textContent=msgs[err.code]||'URČENÍ POLOHY SELHALO.';},{enableHighAccuracy:true,timeout:15000,maximumAge:60000});
 });
 $('mapLink').addEventListener('click',(ev)=>{if(!coords)ev.preventDefault()});
-$('fullBtn').addEventListener('click',async()=>{try{if(!document.fullscreenElement && document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen();if(screen.orientation&&screen.orientation.lock)await screen.orientation.lock('landscape');$('fullStatus').textContent='REŽIM SPUŠTĚN / POKUS O UZAMČENÍ ORIENTACE.';}catch{$('fullStatus').textContent='PROHLÍŽEČ NEPOVOLIL CELOU OBRAZOVKU NEBO UZAMČENÍ ORIENTACE. PO INSTALACI NA PLOCHU TO MŮŽE FUNGOVAT LÉPE.';}});
+
 function status(){ $('connectivity').textContent=navigator.onLine?'MÍSTNÍ REŽIM':'BEZ SPOJENÍ'; }
 window.addEventListener('online',status);window.addEventListener('offline',status);
-formatNow();setInterval(formatNow,1000);status();renderNotes();loadEncyclopedia();renderSpecs();
+formatNow();setInterval(formatNow,1000);status();showUserId();renderNotes();loadEncyclopedia();renderSpecs();
 initBattery();
 setInterval(updateBattery, 60000);
 document.addEventListener('visibilitychange', () => { if (!document.hidden) updateBattery(); });

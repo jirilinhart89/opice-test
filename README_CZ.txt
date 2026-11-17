@@ -1,42 +1,40 @@
-OSOBNÍ TERMINÁL VZ. 37 – EDICE 1.4
-===================================================
+OSOBNÍ TERMINÁL VZ. 37 — EDICE 1.4
+===================================
 
-NOVINKA: Hesla encyklopedie jsou nyní v jediném textovém souboru:
-    encyklopedie.txt
+NOVINKY
+- Kliknutí na znak Pragy v záhlaví vrátí hlavní obrazovku a zároveň se
+  pokusí obnovit celoobrazovkový režim (pokud jej prohlížeč dovolí).
+- Volba fullscreen byla odstraněna ze stránky NASTAVENÍ.
+- Nastavení nyní obsahuje TECHNICKÉ ÚDAJE, pětimístné ID uživatele,
+  export čitelného TXT a export/import zálohy JSON.
+- ID je na hlavní obrazovce a ukládá se ke každému NOVÉMU záznamu.
+  Pokud ID ještě nenastavíte, záznam se uloží s označením NEUVEDENO.
+  Změna čísla zpětně nepřepisuje autorství starších záznamů.
+- Starší záznamy zůstávají zachovány, pouze nemají přiřazené ID.
 
-JAK PŘIDAT HESLO:
-1. Otevřete encyklopedie.txt v editoru prostého textu (UTF-8).
-2. Za poslední heslo vložte prázdný řádek a nový nadpis s dvěma mřížkami:
+ZÁLOHY DENÍKU
+- EXPORT ZÁLOHY (.JSON) vytvoří soubor vz37-denik-zaloha.json.
+  Zahrnuje texty, data a původní ID autorů. TENTO formát je určen pro import.
+- IMPORT ZÁLOHY (.JSON) soubor zkontroluje, nabídne potvrzení a pouze
+  PŘIDÁ dosud neexistující záznamy. Duplicity se ignorují. Stávající
+  záznamy nepřepisuje, uživatelské ID přístroje nemění.
+- EXPORT KE ČTENÍ (.TXT) je určen pouze k čtení a tisku, nelze jej importovat.
+- Zachována místní paměť a klíč pt37-notes-v1. Uložení a import probíhá
+  lokálně v prohlížeči; soubor JSON nikam automaticky neodesíláme.
 
-## NÁZEV NOVÉHO HESLA
-Zde napíšete první odstavec.
+ENCYKLOPEDIE
+- Dále se upravuje pouze soubor encyklopedie.txt.
+- Každé heslo začíná na samostatném řádku "## NÁZEV HESLA" (bez mezer ve slově HESLA).
+- V online režimu se soubor načítá aktuálně, offline z cache.
 
-Tady může pokračovat další odstavec. Uvozovky, čárky a dvojtečky jsou v pořádku.
+AKTUALIZACE
+- Nahrajte celý obsah ZIPu do kořenové složky GitHub Pages repozitáře,
+  včetně podsložky icons/ a souboru sw.js. URL aplikace musí zůstat stejná.
+- Nemažte data webu; tam jsou uloženy stávající zápisky a ID.
+- Ověřte v patičce číslo VERZE 1.4. Service Worker se někdy aktualizuje
+  až při dalším otevření aplikace.
 
-3. Soubor uložte a nahrajte do kořenové složky vašeho GitHub Pages repozitáře.
-4. Po nasazení otevřete v aplikaci Encyklopedii; při otevření znovu načte hesla.
-   Pro aktualizaci hesel už není třeba měnit app.js ani sw.js.
-
-DŮLEŽITÉ:
-- Nadpis každého hesla musí být na samostatném řádku a začínat „## “.
-- Text přísluší heslu až do dalšího řádku začínajícího „## “.
-- Název a text se zobrazují jako obyčejný text. HTML není podporováno.
-- Při online provozu se načte aktuální archiv. Při offline provozu
-  se použije poslední dříve načtená verze uložená v PWA cache.
-- Na GitHub Pages se změny mohou projevit s krátkým zpožděním.
-
-INSTALACE VERZE 1.4:
-Nahrajte VŠECHNY soubory z tohoto ZIPu do stejného veřejného GitHub
-repozitáře jako stávající aplikaci. Dodržte podsložku icons/.
-Při prvním nasazení je potřeba nahrát také encyklopedie.txt i sw.js.
-Stávající zápisky deníku se uchovávají pod stejným klíčem
-pt37-notes-v1 v localStorage při zachování stejné adresy aplikace.
-Neodstraňujte data webu prohlížeče, jinak můžete o deník přijít.
-
-Soubor app.js obsahuje vaše upravené technické údaje Praga a další funkce.
-
-NOVINKA VERZE 1.4:
-Klepnutí na znak českého lva v záhlaví vrací na hlavní obrazovku
-a současně požádá prohlížeč o režim celé obrazovky. Přepnutí
-se může lišit podle verze Androidu a Chrome. Pokud ho prohlížeč
-nepovolí, návrat do nabídky zůstává funkční.
+POZNÁMKA K ANDROIDU
+- Fullscreen API vyžaduje skutečný klik uživatele. Android nebo Chrome
+  jej mohou odmítnout; pak přesto proběhne návrat do hlavní nabídky.
+- Jiná systémová oznámení (například zdravotní) aplikace neovládá.

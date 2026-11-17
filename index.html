@@ -36,6 +36,7 @@
               <span class="battery-runtime">ZBÝVÁ: <strong id="batteryHours">— h</strong></span>
             </div>
             <div class="data-row"><span>ULOŽENÉ ZÁZNAMY</span><strong id="notesCount">0</strong></div>
+            <div class="data-row home-user-id"><span>ID UŽIVATELE</span><strong id="homeUserId">— — — — —</strong></div>
             <div class="data-row"><span>POLOHA</span><strong id="locationSummary">NEZJIŠTĚNA</strong></div>
             <div class="system-msg">SPOJENÍ S ÚSTŘEDÍM: <span class="signal-lost">PŘERUŠENO</span></div>
           </div>
@@ -115,9 +116,35 @@
       </section>
       <section id="settings" class="page" aria-labelledby="settingsTitle">
         <div class="section-title"><h1 id="settingsTitle">06 / NASTAVENÍ</h1><span>SYSTÉM TERMINÁLU</span></div>
-        <div class="two-col">
-          <div class="panel"><h2>TECHNICKÉ ÚDAJE</h2><p>Štítek a servisní list.</p><button class="outline" data-go="specs">TECHNICKÉ ÚDAJE</button></p><p class="muted">OSOBNÍ TERMINÁL VZ. 37 · KONCEPČNÍ PROTOTYP 1.3</p></div>
-          <div class="panel"><h2>PAMĚŤ A ÚDAJE</h2><p>Deník je ukládán jen do lokální paměti tohoto prohlížeče. Odstraněním dat webu o něj můžete přijít.</p><div class="settings-actions"><button class="outline" id="exportBtn">EXPORTOVAT DENÍK (.TXT)</button></div>
+        <div class="two-col settings-grid">
+          <div class="panel settings-panel">
+            <h2>TECHNICKÉ ÚDAJE</h2>
+            <p>Výrobní štítek, typové označení a servisní list přístroje PRAGA.</p>
+            <button class="solid" data-go="specs">ZOBRAZIT TECHNICKÁ DATA</button>
+            <div class="settings-divider"></div>
+            <h2>IDENTIFIKACE UŽIVATELE</h2>
+            <label for="userIdInput">PĚTIMÍSTNÉ EVIDENČNÍ ČÍSLO</label>
+            <div class="user-id-controls">
+              <input type="text" id="userIdInput" inputmode="numeric" autocomplete="off" spellcheck="false" maxlength="5" pattern="[0-9]{5}" placeholder="00000" aria-describedby="userIdHint" />
+              <button class="outline" id="saveUserId">ULOŽIT ID</button>
+            </div>
+            <p class="muted" id="userIdHint">ID je uvedeno na hlavní obrazovce a přiřadí se k novým záznamům. Změna ID nepřepíše starší záznamy. Prázdné pole ID odstraní.</p>
+            <p class="muted" id="userIdStatus" role="status" aria-live="polite"></p>
+          </div>
+          <div class="panel settings-panel">
+            <h2>ARCHIV POLNÍHO DENÍKU</h2>
+            <p>Záznamy jsou uloženy pouze v paměti tohoto přístroje. Pro přenos nebo zálohu používej soubor JSON.</p>
+            <div class="settings-actions">
+              <button class="solid" id="exportJsonBtn">EXPORT ZÁLOHY (.JSON)</button>
+              <button class="outline" id="importJsonBtn">IMPORT ZÁLOHY (.JSON)</button>
+              <input id="importJsonFile" class="visually-hidden-file" type="file" accept=".json,application/json" aria-label="Vybrat soubor se zálohou deníku JSON" tabindex="-1" />
+            </div>
+            <p class="muted">Import přidá záznamy, které v archivu ještě nejsou. Existující zápisy nesmaže; původní datum a ID autora zůstanou zachované.</p>
+            <div class="settings-divider"></div>
+            <button class="outline" id="exportBtn">EXPORT KE ČTENÍ (.TXT)</button>
+            <p class="muted">TXT je čitelný výpis, nikoli formát pro zpětný import.</p>
+            <p class="muted" id="transferStatus" role="status" aria-live="polite"></p>
+          </div>
         </div>
       </section>
       <section id="specs" class="page" aria-labelledby="specsTitle">

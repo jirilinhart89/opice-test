@@ -1,4 +1,4 @@
-// V1.4: obnovení fullscreen režimu tlačítkem s českým lvem.
+// V1.4: aktualizace encyklopedie bez nutnosti měnit JavaScript.
 const CACHE = 'pt37-static-v14';
 const ASSETS = [
   './', './index.html', './style.css', './app.js', './encyklopedie.txt',

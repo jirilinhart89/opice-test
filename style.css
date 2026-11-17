@@ -451,3 +451,35 @@ footer {font-size:clamp(13px,1.5vw,17px)}
  .moon-row canvas{width:56px;height:56px}
  .nav-astro-info{font-size:11px!important;margin:3px 0!important}
 }
+
+/* ============================================================
+   VZ. 37 / 1.4 — IDENTIFIKACE A ZÁLOHOVÁNÍ DENÍKU
+   ============================================================ */
+.home-user-id strong {font-variant-numeric:tabular-nums;letter-spacing:.1em}
+.settings-panel{overflow:auto;scrollbar-color:var(--dim) transparent}
+.settings-divider{border-top:1px solid var(--line);margin:12px 0}
+.settings-panel label{margin:0 0 6px}
+.user-id-controls{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+#userIdInput{
+  width:clamp(110px,15vw,160px);max-width:100%;
+  min-height:43px;border:1px solid #a76a2d;background:#080604;
+  color:var(--bright);padding:6px 10px;
+  font:800 clamp(18px,2.1vw,25px)/1.2 var(--font);
+  letter-spacing:.20em;font-variant-numeric:tabular-nums;
+}
+#userIdInput::placeholder{color:#77542f}
+#userIdInput:focus-visible{outline:2px solid var(--bright);outline-offset:2px}
+.settings-actions{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 10px}
+.settings-actions button{flex:1 1 auto}
+.settings-panel p.muted{margin:7px 0}
+.visually-hidden-file{position:absolute!important;width:1px!important;height:1px!important;
+  padding:0!important;margin:0!important;border:0!important;overflow:hidden!important;
+  clip:rect(0 0 0 0)!important;white-space:nowrap!important;opacity:0!important}
+@media (orientation:landscape) and (max-height:420px){
+  .settings-panel{padding:8px 11px}
+  .settings-panel h2{margin-bottom:5px}
+  .settings-panel p{margin-bottom:8px}
+  .settings-divider{margin:8px 0}
+  #userIdInput{min-height:39px;font-size:20px}
+  .settings-actions button,.user-id-controls button{min-height:39px;padding:7px 9px}
+}
