@@ -1,7 +1,7 @@
 'use strict';
 const $ = (id) => document.getElementById(id);
 const STORAGE = 'pt37-notes-v1';
-const APP_VERSION = '1.3';
+const APP_VERSION = '1.4';
 let coords = null;
 
 /*
@@ -147,7 +147,23 @@ function showPage(name){
 }
 
 document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.go)));
-$('homeLogo').addEventListener('click',()=>showPage('home'));
+// Znak v záhlaví: návrat na úvodní obrazovku a pokus o obnovení režimu celé obrazovky.
+// requestFullscreen() musí zaznít přímo v obsluze skutečného kliknutí uživatele.
+$('homeLogo').addEventListener('click', () => {
+  showPage('home');
+  if (document.fullscreenElement) return; // Už jsme ve fullscreen režimu.
+  const enterFullscreen = document.documentElement.requestFullscreen;
+  if (typeof enterFullscreen !== 'function') return;
+  try {
+    const request = enterFullscreen.call(document.documentElement);
+    // Neúspěch nikdy nezabrání návratu na hlavní obrazovku.
+    if (request && typeof request.catch === 'function') {
+      request.catch(() => {});
+    }
+  } catch (_) {
+    // Prohlížeč může přepnutí zakázat; návrat do nabídky přesto funguje.
+  }
+});
 
 function readNotes(){try {const data=JSON.parse(localStorage.getItem(STORAGE)||'[]');return Array.isArray(data)?data:[];}catch{return [];}}
 function storeNotes(notes){try{localStorage.setItem(STORAGE,JSON.stringify(notes));return true;}catch{return false;}}

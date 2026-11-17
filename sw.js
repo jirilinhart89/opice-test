@@ -1,5 +1,5 @@
-// V1.3: aktualizace encyklopedie bez nutnosti měnit JavaScript.
-const CACHE = 'pt37-static-v13';
+// V1.4: obnovení fullscreen režimu tlačítkem s českým lvem.
+const CACHE = 'pt37-static-v14';
 const ASSETS = [
   './', './index.html', './style.css', './app.js', './encyklopedie.txt',
   './pozadi-hradcany.webp', './manifest.webmanifest', './logo-praga.webp',
