@@ -230,41 +230,153 @@ Z Ještědu prý za jasných nocí občas vychází světlo a někteří lidé s
 POZNÁMKA SPRÁVCE — Nepotvrzené hlášení o signálu ponecháno pro případ pozdějšího srovnání s dalšími archivními záznamy.
 
 ## REPUBLIKA
-Souhrnné označení někdejšího státního zřízení a společného území Čech, Moravy, Slezska a Slovenska. Historické záznamy o jeho jednotlivých obdobích jsou neúplné.
+PŮVODNÍ ZÁZNAM — Ústřední redakce cestovní encyklopedie, 2038
 
-Některé komunity užívají název „Republika“ i dnes.
+Republika je společným státem zemí českých a slovenských. Její území tvoří Čechy, Morava, Slezsko a Slovensko; hlavním městem je Praha. Veřejnou správu vykonávají ústavou stanovené orgány, zemské a místní úřady. Občanům jsou zaručena práva a povinnosti podle platného právního řádu. Podrobnosti o správním členění, dopravě a jednotlivých zemích obsahují samostatná hesla.
+
+OPRAVA — Ústřední informační služba, 2052
+
+Údaje o státním zřízení a názvech správních orgánů odpovídají vydání z roku 2038 a nelze je používat pro současný úřední styk. Platné označení institucí a přehled správních obvodů jsou vedeny v dodatku Státní správa. Starší text se ponechává pro potřeby historické a archivní.
+
+DOPLNĚNÍ — Archivní pracoviště, 2071
+
+Při převodu starších encyklopedií bylo zjištěno několik různých hesel nazvaných REPUBLIKA, jejichž texty se vztahují k odlišným obdobím. Není dovoleno je automaticky sloučit pouze podle shodného názvu. Každé vydání musí zachovat označení původce a datum poslední doložené úpravy.
+
+MÍSTNÍ DODATEK — datum nezjištěno
+
+Slovem Republika se dnes označuje starý stát, jeho někdejší území i představa řádu, který by se mohl vrátit. Některé osady se k Republice hlásí a uchovávají její znaky, aniž by mezi nimi existovalo společné velení či správa. O tom, kdy Republika skončila a zda byla obnovena, se dochované zprávy neshodují.
 
 ## CIVILNÍ OBRANA
-Organizace spojená s přípravou obyvatelstva na nebezpečí, ochranou civilistů a budováním krytů. Nálezy jejích plánů a označení jsou časté.
+PŮVODNÍ ZÁZNAM — Příručka ochrany obyvatelstva, vydání 2037
 
-UPOZORNĚNÍ: Archivní plány nemusí odpovídat stavu terénu.
+Civilní obrana je soustava opatření k ochraně obyvatelstva při válečném ohrožení, průmyslových haváriích a jiných mimořádných událostech. Zahrnuje varování obyvatel, přípravu ochranných prostor, evakuaci, zdravotnickou pomoc a zabezpečení nezbytných potřeb. Organizace a povinnosti jednotlivých složek se řídí platnými předpisy.
+
+Kryty civilní obrany se označují podle příslušného stavebního a provozního řádu. Jejich kapacita, vybavení a přístupové trasy podléhají pravidelným kontrolám. Veřejné mapy mají orientační povahu; rozhodující jsou aktuální pokyny místních orgánů.
+
+OPRAVA — Správa ochranných staveb, 2061
+
+Při používání starších plánů musí být ověřeno nové číslování objektů a stav přístupových komunikací. U několika typů krytů došlo k přestavbě větracích soustav a k náhradě původních akumulátorových zdrojů. Převzaté nákresy nesmějí být považovány za revizní dokumentaci.
+
+VAROVÁNÍ — pozdější ručně vložený záznam
+
+Nalezené značky CO neznamenají, že je kryt přístupný nebo bezpečný. Některé vstupy jsou zavalené, vnitřní prostory mohou být bez vzduchu, zatopené nebo obývané. Předpádové plány bývají neúplné. Kdo podle nich hledá cestu pod zem, činí tak na vlastní nebezpečí.
 
 ## LEGIONÁŘI
-Pověsti vyprávějí o ozbrojených poutnících, kteří pro Republiku putovali přes vzdálené země. Dobové prameny i lidové písně jim připisují různé činy. Přesné časové zařazení je sporné.
+PŮVODNÍ ZÁZNAM — Republikánský dějepisný přehled, 2038
+
+Českoslovenští legionáři byli příslušníky dobrovolnických vojenských jednotek utvářených v zahraničí za zápasu o samostatný stát. Jejich působení v různých zemích, zejména dlouhá cesta části jednotek přes území Ruska, zaujímá významné místo v dějinách vzniku Republiky. Památku legionářů připomínají pomníky, spolkové sbírky, písemné vzpomínky a vojenské písně.
+
+K historickému studiu se doporučuje rozlišovat osobní svědectví, úřední hlášení a pozdější literární zpracování. Jednotlivé příběhy se mohou lišit v dataci i v popisu událostí.
+
+DOPLNĚNÍ — Redakce společenských věd, 2057
+
+Starší výklad přeceňuje zásluhy některých velitelů a nedostatečně postihuje sociální a politické rozdíly uvnitř dobrovolnických jednotek. Pro školní a služební potřebu se doporučuje revidované vydání dějin. Původní pamětnické záznamy se z archivních důvodů neodstraňují.
+
+POZNÁMKA KNIHOVNÍKA — datum nezjištěno
+
+Lidové vyprávění zná legionáře jako ozbrojené poutníky, kteří se vraceli z dalekých zemí po železnici, pěšky i přes moře. Některé písně jim přisuzují činy, jež se podle dochovaných dokumentů odehrály v jiných dobách. Není jisté, zda současní vypravěči rozlišují původní vojáky od pozdějších skupin, které přijaly jejich jméno a znaky.
 
 ## SLOVENSKO
-Země východně od Moravy, spojovaná s Republikou. Dochované mapy se neshodují v jejím politickém postavení. Příběhy o Tisovi a Mečiarovi se v lidovém podání někdy prolínají.
+PŮVODNÍ ZÁZNAM — Cestovní encyklopedie Republiky, 2038
+
+Slovensko je zemí ve východní části Republiky. Jeho významným správním a kulturním střediskem je Bratislava, ležící na Dunaji. Území se vyznačuje horskými oblastmi Karpat, zemědělskými nížinami a rozsáhlou sítí železničních i silničních spojení. Podrobnosti o dopravě a turistických trasách obsahují zemské mapové přílohy.
+
+OPRAVA — Státní kartografická služba, 2054
+
+Správní hranice a názvy úřadů na mapách vydání 2038 neodpovídají současnému stavu. Pro služební použití je závazná poslední schválená mapa. Historické názvy se v archivním vydání ponechávají, aby bylo možné vyhledávat starší dokumenty a technické výkresy.
+
+ARCHIVNÍ POZNÁMKA — 2073
+
+Soubory pocházející z různých správních období uvádějí pro Slovensko rozdílné státní a zemské zařazení. Rozpor nelze řešit odstraněním staršího záznamu. Doporučuje se uchovávat datum a zdroj každé mapové vrstvy zvlášť.
+
+MÍSTNÍ DODATEK — původce nezjištěn
+
+O zemi za Moravou kolují rozličná vyprávění. Někteří kupci tvrdí, že stále patří Republice, jiní hovoří o samostatných územích, jejichž hranice nikdo spolehlivě nezmapoval. V pověstech se prolínají jména Tiso a Mečiar; z těchto podání nelze určit, v jakém období jednotlivé osoby žily ani jaké úřady zastávaly.
 
 ## KONEC / PÁD
-Obecné označení pro zánik starého světa. Mezi tradovaná vysvětlení patří války, havárie, rozpad zásobování a dlouhotrvající krize. Datum ani příčina nejsou všeobecně přijímány.
+PRVNÍ DOLOŽENÝ ZÁZNAM — místní kompilace, datum a autor neznámé
+
+Pád, někdy též Konec, je souhrnné označení událostí, po nichž přestala fungovat většina známých ústředních služeb, zásobovacích sítí a státních institucí. Výraz není převzat z původní předpádové encyklopedie; byl k ní připojen některým z pozdějších uživatelů.
+
+Podle jedněch svědectví předcházely Pádu války a rozsáhlé útoky. Jiné záznamy hovoří o průmyslových haváriích, nemocech, rozpadu dopravy a dlouhém období nedostatku. Není prokázáno, zda šlo o jedinou událost, nebo o souběh několika pohrom.
+
+OPRAVA — neznámý správce archivu
+
+Ve starých pamětech se opakovaně vyskytují letopočty 2077 a pozdější data. Některé údaje mohou označovat poslední aktualizaci souboru, nikoli okamžik jeho vzniku či zániku ústředí. Poškozené hodiny přístrojů a chybně převedené kalendáře snižují jejich důkazní hodnotu. Přesné datum Pádu nelze z dostupných podkladů určit.
+
+DODATEK KNIHOVNÍKA
+
+Označení Pád se v jednotlivých osadách používá různě. Pro někoho je to den, kdy umlklo rádio; pro jiného rok, kdy přestal jezdit poslední vlak. Při přepisu svědectví je třeba zaznamenat, co konkrétně pamětník slovem Pád rozuměl.
 
 ## V BOJ
-Listinné důkazy naznačují propojení tzv. Odboje s obdobím okupace Republiky. Symbolika lva, drtícího v tlapách symboly zla.
+PŮVODNÍ ZÁZNAM — Bibliografický soupis odbojových tiskovin, archivní vydání 2066
+
+V boj je název spojovaný s ilegálními tiskovinami a činností domácího odboje v období okupace. Dochované exempláře se liší provedením, použitými tiskovými prostředky a úplností. Některé nesou motiv českého lva, který drtí symboly okupantské moci. Přesné určení jednotlivých vydání vyžaduje porovnání papíru, sazby a dobových soupisů.
+
+Při katalogizaci je nutno odlišovat původní tisk od pozdějších opisů a pamětních reprodukcí. Shodný obrazový motiv sám o sobě neprokazuje společného vydavatele.
+
+DOPLNĚNÍ — Ústav historických pramenů, 2072
+
+Do veřejného archivu byly vloženy dvě neúplné reprodukce. Původ obou je označen jako nejistý; k jedné chybí titulní list, druhá pochází z pozdějšího přetisku. Uvedené texty nejsou úplným souborem odbojových dokumentů.
+
+POZNÁMKA NÁLEZCE — datum nezjištěno
+
+Našel se list se lvem a roztrženými znameními nepřítele. V osadě se říká, že jej nosili bojovníci za Republiku. Jiní tvrdí, že jde o vojenský rozkaz. Na zachovaném útržku však není vidět podpis ani datum. Výklad ponechán otevřený.
 
 ## KNIHOVNA
-Knihovna v Rust Haven je místem odpočinku, vzdělání, kultury a čaje.
+MÍSTNÍ ZÁZNAM — Rusthaven, datum založení hesla nezjištěno
+
+Knihovna v Rusthavenu je místem uchovávání písemností, vzdělávání, rozhovorů a odpočinku. Vedle knih a časopisů se zde podle možností shromažďují také elektronické archivy, výpovědi cestujících a opisy nalezených dokumentů. Návštěvníkům bývá nabízen čaj.
+
+Knihovníci pomáhají s vyhledáváním informací a s porovnáváním pramenů. Nález starého záznamu nepovažují automaticky za důkaz jeho pravdivosti; při převodu archivů doporučují zachovat údaj o původu a předchozí znění textu.
+
+DOPLNĚNÍ — neznámý návštěvník
+
+Do Knihovny se chodí také tehdy, když člověk žádnou knihu nehledá. Dá se tu na chvíli sedět, poslouchat vyprávění a připomenout si, že civilizace není jen to, co se podařilo zachránit ze starých skladů.
+
+POZNÁMKA SPRÁVCE
+
+Údaje o provozu, otevírání a dostupných sbírkách se mohou měnit. O zápůjčkách a přístupu k jednotlivým archivům rozhodují jejich správci. Tento záznam neopravňuje k požadování vydání žádné konkrétní písemnosti.
 
 ## ČAJ
-Čaj je palivo, které z Knihovny pochází, a jehož síla probere i toho nejvíce zmoženého ducha.
+PŮVODNÍ ZÁZNAM — Potravinářská a cestovní příručka, vydání 2039
+
+Čaj je nápoj připravovaný zpravidla louhováním upravených listů čajovníku v horké vodě. Podle druhu suroviny a způsobu zpracování se rozlišují různé čajové výrobky. V běžné mluvě se názvem čaj označují také nálevy z jiných rostlin. Nápoj se podává teplý i chlazený; při přípravě je nutno dbát na zdravotní nezávadnost vody.
+
+DOPLNĚNÍ — Místní archiv Knihovny, Rusthaven
+
+V Rusthavenu se čaj stal neodmyslitelnou součástí návštěvy Knihovny. Jeho původní složení, síla a dostupnost se mění podle zásob. Návštěvníkům se doporučuje nevydávat každou tmavou tekutinu za stejný nápoj.
+
+RUČNÍ POZNÁMKA — původce neznámý
+
+Čaj je palivo, které pochází z Knihovny a dokáže postavit na nohy i nejvíce zmoženého ducha. Tento výrok je nutno chápat obrazně; žádný archivovaný předpis nepovoluje použití čaje v motorovém zařízení.
 
 ## SPALOVAČI
-1. Spalovačský desant je skupinou žoldnéřů, jež našli pod praporem společnou řeč i poslání. Se ctí a smyslem pro povinnost se vydávají tam, kam se jiní neodváží.
+MÍSTNÍ ZÁZNAM — Rusthaven, pozdější vydání
 
-Nehledě na osobní oběti pracují pro dobro města, které je přijalo.
+1. Spalovačský desant, zvaný Spalovači, je žoldnéřské společenství působící v Rusthavenu. Jeho členové se věnují především odstraňování odpadu, úklidu a dalším pracím, které jiní často odmítají. Užívají vlastní prapor, hodnosti a způsob vystupování inspirovaný tradicemi někdejší Republiky.
+
+Jednotka se hlásí ke cti, službě a vzájemné odpovědnosti. Příslušníci desantu vykonávají práci pro město, které je přijalo, a v případě potřeby pomáhají také při společných úklidových a zásobovacích činnostech. Nejde o městskou policii a její hodnosti nedokládají podřízenost existujícímu státnímu vojenskému velení.
+
+DOPLNĚNÍ — terénní poznámka
+
+Spalovači bývají rozpoznatelní podle uniforem a pracovních vozidel. Po skončení shromáždění či slavností se podle svědectví často vracejí na místo se stejnou pravidelností jako předtím na obchůzku; místo výzbroje přitom nesou nářadí a košťata.
+
+POZNÁMKA KNIHOVNÍKA
+
+Historii jednotky je třeba odlišovat od dějin předpádového vojska, jehož tradice členové připomínají. O vzniku, jednotlivých velitelích a službě desantu existují především místní záznamy a osobní svědectví. Tyto prameny mohou být doplněny bez odstranění původního textu.
 
 ## MASARYK
-Tomáš Garrigue Masaryk, známý též jako prezident Osvoboditel, byl jedním ze zakladatelů dávné Republiky.
+PŮVODNÍ ZÁZNAM — Republikánský dějepisný přehled, 2037
 
-Podle dochovaných pramenů byl známý svou zálibou v jízdě na koni. 
+Tomáš Garrigue Masaryk, označovaný jako prezident Osvoboditel, patří k hlavním osobnostem vzniku Československé republiky a k jejím prvním státním představitelům. Ve veřejném životě zdůrazňoval vzdělání, občanskou odpovědnost a demokratickou správu věcí veřejných. Jeho jméno nesou školy, ulice a pamětní místa. S Masarykem je spojeno také sídlo v Lánech a jeho známá záliba v jízdě na koni.
 
-Jeho citátem jest například: "Tož demokracii bychom měli. Teď ještě nějaké ty demokraty."
+DOPLNĚNÍ — Redakce historických věd, 2056
+
+Starší text má slavnostní a hodnotící ráz. Při výuce se doporučuje rozlišovat Masarykovu politickou činnost, pozdější státní tradici a výroky, které mu byly připsány až v následujících desetiletích. Původní republikánské vydání se ponechává v archivní podobě.
+
+POZNÁMKA KNIHOVNÍKA — datum nezjištěno
+
+Jméno Masaryk se dochovalo také ve spojení Tatíček a prezident Osvoboditel. Některé osady jej pokládají za téměř legendárního zakladatele Republiky; přesné časové pořadí jeho života, pozdějších prezidentů a jednotlivých podob státu bývá v ústním podání zaměňováno.
+
+V zápiscích se mu připisuje výrok: „Tož demokracii bychom měli. Teď ještě nějaké ty demokraty.“ V dostupném opisu však chybí původní pramen, a proto se uvádí jako tradičně připisovaný citát, nikoli ověřený doslovný záznam.
