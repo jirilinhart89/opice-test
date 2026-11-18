@@ -1,7 +1,128 @@
 ## OSOBNÍ TERMINÁL VZ. 37
-Osobní počítač s integrovanou cestovní encyklopedií, určený pro evidenci poznámek, orientaci v terénu a přístup k místním encyklopedickým údajům. Jde o přístroj určený k nošení na předloktí.
+Praga, akciová společnost, závod Vysočany. Technický katalog, vydání 2038.
 
-Vojenské i civilní využití, především u terénních pracovníků, zeměměřičů, prospektorů nebo finančních úředníků.
+Osobní terminál vz. 37 je přenosný výpočetní přístroj určený pro vedení pracovních záznamů, vyhledávání v cestovní encyklopedii a použití v terénu. Přístroj se upevňuje na předloktí pomocí stavitelného nátepníku. Ochranné víko zamezuje neúmyslnému dotyku zobrazovací plochy a chrání ji při přenášení.
+
+Vnitřní paměť uchovává poslední používané soubory i při přerušení spojení s informačním ústředím. K příslušenství patří kapacitní zapisovací pero, dobíjecí souprava a přenosové vedení pro výměnu archivů s jinými schválenými přístroji.
+
+Pro pravidelnou službu se doporučuje denní kontrola stavu akumulátoru a záloha osobních záznamů nejméně jednou týdně.
+
+## NÁTEPNÍK A OCHRANNÉ POUZDRO
+Praga, akciová společnost. Návod k používání osobního terminálu, 2037.
+
+Nátepník slouží k upevnění terminálu na předloktí, nikoli k přenášení celkové hmotnosti zavazadla. Řemínky se přitahují tak, aby přístroj při pohybu nesjížděl a zároveň neomezoval krevní oběh ani pohyb ruky. Při nošení přes pracovní oděv je nutno nastavení zopakovat.
+
+Odklápěcí víko se za chůze a při manipulaci s nářadím ponechává zavřené. Přístroj není určen k použití jako ochranná pomůcka při nárazu nebo pádu. Před čištěním se odpojuje napájecí vedení.
+
+Po styku s vodou se pouzdro otře suchým hadříkem. Kožené díly se nevystavují přímému sálavému teplu. Poškozené zapínání se vyměňuje, nikoli provizorně zajišťuje drátem.
+
+## CESTOVNÍ ENCYKLOPEDIE
+Ústřední redakce cestovních a technických informací. Všeobecné pokyny, republikánské vydání 2039.
+
+Cestovní encyklopedie je soubor místopisných, dopravních, přírodovědných a technických informací určených pro veřejnou a odbornou potřebu. Jednotlivá hesla se opatřují názvem, datem vydání a podle potřeby označením odpovědné instituce.
+
+Změny jízdních řádů, přístupových cest a provozních předpisů mohou nastat i před vydáním nové archivní kazety. Uživatel proto ověřuje časově citlivé údaje u příslušného úřadu nebo provozovatele.
+
+Soukromé poznámky se ukládají odděleně od základního vydání. Opravu zjištěné nepřesnosti lze zaslat redakci prostřednictvím veřejného informačního střediska. Zaznamenaná oprava se do společného vydání zařazuje až po ověření.
+
+## DRUŽICOVÁ A POZEMNÍ POLOHOVÁ SLUŽBA
+Správa zeměměřictví a mapování. Informační list pro terénní pracovníky, 2038.
+
+Polohová služba umožňuje určit zeměpisné souřadnice, směr pohybu a v příznivých podmínkách též nadmořskou výšku. Přesnost závisí na dostupnosti přijímaných signálů, stavu antény, terénních překážkách a místních rušivých vlivech.
+
+Poloha zobrazená na osobním terminálu má orientační charakter. Pro vytyčování stavebních bodů, geodetické práce a jiné úřední úkony se používají schválené měřické postupy.
+
+V tunelu, pod masivní střechou či v hlubokém údolí nemusí být určení polohy možné. V takovém případě se doporučuje práce s posledním platným bodem a tištěnou mapou.
+
+## PAMĚŤOVÁ KAZETA A MÍSTNÍ ARCHIV
+Praga, akciová společnost. Příručka provozní obsluhy, 2038.
+
+Paměťová kazeta slouží k přenosu map, encyklopedických souborů, technických norem a záloh uživatelských zápisů. Před vyjmutím kazety se ukončí zápisová činnost a ověří se kontrolní značka dokončeného uložení.
+
+Jednotlivé údaje mohou být označeny jako veřejné, služební nebo osobní. Toto označení samo o sobě nezajišťuje utajení; ochrana služebních písemností se řídí příslušnými předpisy.
+
+Při přenosu mezi přístroji různého výrobce se mohou lišit obrazové přílohy, mapové vrstvy a možnosti vyhledávání. Základní textové záznamy lze v podporovaných formátech obvykle převést bez zásahu do jejich obsahu.
+
+## KRYTY CIVILNÍ OBRANY
+Ústředí civilní obrany Republiky. Veřejný informační výtah, 2039.
+
+Kryty civilní obrany jsou určeny k dočasné ochraně obyvatelstva při mimořádných událostech, průmyslových haváriích a za stavu ohrožení. Jejich vybavení a kapacita se liší podle stavebního provedení a místních podmínek.
+
+Při vyhlášení výstrahy je nutno řídit se pokyny příslušných orgánů. Údaje o přístupových cestách a provozní připravenosti jednotlivých krytů podléhají průběžným změnám; archivní plán sám o sobě není potvrzením, že je objekt přístupný.
+
+Domovní a závodní kryty musí mít vedenou evidenci nezbytného vybavení, zásob vody, prostředků první pomoci a náhradního osvětlení. Kontroly se zaznamenávají do provozního deníku.
+
+## PŘENOSNÝ TERMINÁL VE SLUŽBĚ
+Ministerstvo dopravy a technického zabezpečení. Oběžník pro služební použití, 2042.
+
+Přenosné terminály se používají k evidenci provozních závad, předávání stručných hlášení a uchovávání pracovních postupů v době, kdy není možné bezprostředně využít pevné pracoviště.
+
+Služební záznam obsahuje datum, označení stanoviště a identifikační číslo zapisovatele. Ústní rozkaz ani potvrzení přijaté po spojovací lince se nenahrazuje neověřenou poznámkou v osobní paměti.
+
+Zařízení přidělená organizaci se po skončení směny předávají spolu s přehledem nedokončených úkolů. Při přerušení spojení se pracovní postup řídí platnými místními předpisy; obnovení přenosu nesmí samočinně přepsat původní zápisy.
+
+## JEDNOTNÝ FORMÁT TECHNICKÝCH ZÁZNAMŮ
+Státní komise pro technickou normalizaci. Metodický pokyn, 2056.
+
+Pro účelnou výměnu údajů mezi národními podniky a organizacemi veřejné správy se zavádí jednotný základní formát textových a tabulkových záznamů osobních výpočetních přístrojů.
+
+Normalizace stanovuje způsob zápisu názvu, data, identifikace původce a návaznosti dodatků. Výrobce může používat vlastní rozšířené obrazové a měřicí funkce, musí však zachovat možnost čtení základní části záznamu na kompatibilním zařízení.
+
+U starších přístrojů republikánské výroby se doporučuje použití převodní služby. Nepřevoditelné části dokumentu se označují jako nepodporované; jejich tiché vynechání bez upozornění není přípustné.
+
+## TESLA — OSOBNÍ POČÍTAČ TYP 62
+Tesla, národní podnik. Provozní příručka, druhé vydání 2063.
+
+Osobní počítač typ 62 je určen zejména pro pracovníky dopravy, energetiky, spojů a ostatních odvětví národního hospodářství. Přístroj umožňuje vyhledávání v podnikových předpisech, vedení služebního deníku a výměnu normalizovaných záznamů.
+
+Provozní program rozlišuje ústřední dokumentaci, závodní doplňky a osobní pracovní poznámky. Změny ústředních předpisů provádí pověřené pracoviště. Závodní doplňky nesmějí být vydávány za platné celostátní normy.
+
+Při práci mimo dosah spojení zůstává poslední schválené vydání dokumentace dostupné v místní paměti. Po opětovném navázání spojení se uživateli nabídne porovnání verzí. Přístroj neodstraňuje starší služební zápisy bez potvrzení obsluhy.
+
+## ŽELEZNIČNÍ TRAŤOVÁ PŘÍRUČKA
+Správa československých drah. Služební archiv, vydání 2064.
+
+Traťová příručka obsahuje přehled sklonových poměrů, dovolených rychlostí, návěstních míst a místních provozních upozornění pro vymezený úsek železniční sítě. Rozsah dostupných údajů závisí na služebním oprávnění uživatele.
+
+Elektronická příručka usnadňuje vyhledávání, nenahrazuje však platné rozkazy a předepsaný způsob seznámení se změnami provozu. Údaj z paměti přístroje se považuje za aktuální pouze při shodě čísla vydání s provozním oběžníkem.
+
+Není-li možné ověřit poslední aktualizaci, postupuje se podle pokynů výpravčího a příslušných služebních předpisů. Zjištěné nesrovnalosti se zapisují do hlášení závad.
+
+## METRA BLANSKO — POLNÍ VÝPOČETNÍ PŘÍSTROJ
+Metra Blansko. Technický list pro resortní odběratele, 2068.
+
+Polní výpočetní přístroj je konstruován pro obsluhu měřicích zařízení, vedení terénních protokolů a práci ve ztížených provozních podmínkách. Podle provedení je vybaven utěsněným krytem, zesíleným upevněním a konektory pro schválené snímače.
+
+Měřicí vstupy vyžadují pravidelnou kontrolu a kalibraci. Údaj označený jako orientační nesmí být použit jako výsledek úředního měření. Doba provozu na akumulátor závisí na připojeném příslušenství a četnosti měřicích cyklů.
+
+Základní textové protokoly jsou převoditelné do společného archivního formátu. Specializované služební soubory mohou vyžadovat příslušnou čtecí jednotku a oprávnění obsluhy.
+
+## POLNÍ MĚŘICÍ SOUPRAVA
+Metra Blansko. Katalog příslušenství, 2067.
+
+Polní měřicí souprava umožňuje připojit k osobnímu výpočetnímu přístroji snímače teploty, tlaku a dalších provozních veličin. Přístroj zaznamenává hodnotu, jednotku, čas odečtu a označení použitého snímače.
+
+Před měřením se ověří rozsah a kalibrační stav čidla. Měření bez připojeného snímače není možné; číselný údaj převzatý z posledního záznamu musí být zřetelně označen jako archivní.
+
+Při dlouhodobém záznamu se doporučuje vnější napájení. Obsluha je povinna zabezpečit pravidelné ukládání výsledků a zabránit záměně jednotlivých měřicích míst.
+
+## OBNOVA A SLUČOVÁNÍ ARCHIVŮ
+Ústav výpočetní techniky a evidence. Doporučený postup pro správce informačních sbírek, 2072.
+
+Při slučování dvou archivů se nejprve vytvoří jejich nezměněné kopie. Záznamy se porovnávají podle identifikátoru, původce a data poslední doložené úpravy. Shodný název hesla není dostatečným důvodem k automatickému odstranění jedné z verzí.
+
+Obsahují-li dva záznamy rozdílné údaje, uchovají se oba do rozhodnutí odpovědného správce. Původní text, datum pořízení a známé následné změny musí zůstat dohledatelné.
+
+Převod ze staršího systému nesmí vytvářet zdání, že neúplný dokument byl úspěšně obnoven v celém rozsahu. Chybějící obrazové nebo měřicí přílohy se uvedou v převodním protokolu.
+
+## VEŘEJNÝ INFORMAČNÍ ARCHIV
+Správa veřejných informačních služeb. Pokyny pro přístup k místním údajům, vydání 2074.
+
+Veřejný informační archiv zpřístupňuje místopisné, dopravní, technické a další údaje poskytované zapojenými institucemi. Každá zveřejněná položka musí mít dohledatelného vydavatele a datum posledního potvrzení.
+
+Doplňky připravené jednotlivci nebo místními organizacemi mohou být předávány prostřednictvím schválených výměnných médií. Zpřístupnění takového doplňku neznamená automaticky potvrzení správnosti všech obsažených tvrzení.
+
+Uživatelům se doporučuje uchovávat důležité dokumenty také v místní paměti a pravidelně pořizovat záložní kopie. Při porovnávání rozdílných vydání se má přednostně zachovat údaj o jejich původu.
 
 ## REPUBLIKA
 Souhrnné označení někdejšího státního zřízení a společného území Čech, Moravy, Slezska a Slovenska. Historické záznamy o jeho jednotlivých obdobích jsou neúplné.
